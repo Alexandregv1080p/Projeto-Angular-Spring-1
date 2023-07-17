@@ -1,0 +1,13 @@
+.example-card {
+    max-width: 400px;
+    margin: 5px;
+    margin-bottom: 8px;
+}
+.conteiner-flex{
+    margin-top: 20px;
+    max-width: 2300px;
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}

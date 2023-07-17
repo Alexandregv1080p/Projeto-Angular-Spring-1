@@ -7,9 +7,17 @@
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav [(opened)]="opened" mode="side" fixedInViewport="true" fixedTopGap="64">
-        <a routerLink="/home" mat-list-item >Home</a>
+        <mat-nav-list>
+            <a routerLink="/" mat-list-item >Home</a>
+            <a routerLink="/" mat-list-item >Workers</a>
+            <a routerLink="/" mat-list-item >Chart</a>
+            <a routerLink="/" mat-list-item >Home</a>
+            <a routerLink="/" mat-list-item >Home</a>
+            <a routerLink="/" mat-list-item >Home</a>
+            <a routerLink="/" mat-list-item >Home</a>
+        </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content class="content">
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>  

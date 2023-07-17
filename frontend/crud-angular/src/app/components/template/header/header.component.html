@@ -7,7 +7,7 @@
 </mat-toolbar>
 <mat-sidenav-container>
     <mat-sidenav [(opened)]="opened" mode="side" fixedInViewport="true" fixedTopGap="64">
-        <mat-list-item><a routerLink="/home"></a></mat-list-item>
+        <a routerLink="/home" mat-list-item >Home</a>
     </mat-sidenav>
     <mat-sidenav-content>
         <router-outlet></router-outlet>

@@ -6,10 +6,10 @@
     <mat-icon>share</mat-icon>
 </mat-toolbar>
 <mat-sidenav-container>
-    <mat-sidenav [(opened)]="opened" mode="side">
+    <mat-sidenav [(opened)]="opened" mode="side" fixedInViewport="true" fixedTopGap="64">
         Start
     </mat-sidenav>
     <mat-sidenav-content>
-        End
+        <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>  

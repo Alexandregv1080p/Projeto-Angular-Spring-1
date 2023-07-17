@@ -1,0 +1,15 @@
+<mat-toolbar>
+    <mat-icon (click)="opened=!opened">menu</mat-icon>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <mat-icon>favorite</mat-icon>
+    <mat-icon>share</mat-icon>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side">
+        Start
+    </mat-sidenav>
+    <mat-sidenav-content>
+        End
+    </mat-sidenav-content>
+</mat-sidenav-container>  

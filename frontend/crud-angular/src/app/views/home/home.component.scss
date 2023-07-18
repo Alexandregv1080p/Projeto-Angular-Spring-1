@@ -1,13 +1,56 @@
-.example-card {
-    max-width: 400px;
-    margin: 5px;
-    margin-bottom: 8px;
-}
-.conteiner-flex{
-    margin-top: 20px;
-    max-width: 2300px;
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  /* Style the dashboard container */
+  .dashboard {
     display: flex;
-    position: relative;
-    justify-content: space-around;
-    flex-flow: row wrap;
+    height: 100vh;
+  }
+  /* Style the main content area */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  /* Style the header */
+  .header {
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Style the dashboard cards */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .card h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .card p {
+    margin: 0;
+    font-size: 18px;
+    color: #777;
+  }
+mat-grid-tile{
+    background-color: #f0f0f0;
 }

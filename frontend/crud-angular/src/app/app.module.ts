@@ -27,6 +27,7 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import {MatGridListModule} from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    NgxChartsModule
+    NgxChartsModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

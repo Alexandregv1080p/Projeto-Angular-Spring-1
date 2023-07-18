@@ -19,10 +19,27 @@
       <p>$50,000</p>
     </div>
   </section>
+  <div class="grid-container">
+    <!-- Top section -->
+    <div class="top-section">
+      <div class="chart-container">
+        <canvasjs-chart [options]="chartOptions"></canvasjs-chart>    
+      </div>     
+    </div>
+  
+    <!-- Bottom section -->
+    <div class="bottom-section">
+      <div class="item">
+        <!-- Content for the first column in the bottom section goes here -->
+        <h2>Column 1</h2>
+        <p>Content of Column 1</p>
+      </div>
+      <div class="item">
+        <!-- Content for the second column in the bottom section goes here -->
+        <h2>Column 2</h2>
+        <p>Content of Column 2</p>
+      </div>
+    </div>
+  </div>
 </div>
-<mat-grid-list cols="2" class="cards">
-  <mat-grid-tile colspan="2">Tile 1</mat-grid-tile>
-  <mat-grid-tile>Tile 2</mat-grid-tile>
-  <mat-grid-tile>Tile 3</mat-grid-tile>
-  <mat-grid-tile>Tile 4</mat-grid-tile>
-</mat-grid-list>
+

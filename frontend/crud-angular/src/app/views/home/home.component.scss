@@ -70,7 +70,9 @@ body {
   /* Two columns with equal width */
   grid-gap: 20px;
 }
-
+canvas.canvasjs-chart-canvas{
+  width: 1000px;
+}
 /* Style the items in the bottom section */
 .item {
   background-color: #fff;

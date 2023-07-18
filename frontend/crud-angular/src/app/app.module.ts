@@ -14,12 +14,15 @@ import {MatCardModule} from '@angular/material/card';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {MatGridListModule} from '@angular/material/grid-list'
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { ChartsComponent } from './widgets/charts/charts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     MatCardModule,
     NgxChartsModule,
     MatGridListModule,
-    CanvasJSAngularChartsModule
+    CanvasJSAngularChartsModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

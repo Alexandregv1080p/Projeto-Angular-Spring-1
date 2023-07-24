@@ -16,13 +16,15 @@ import {MatGridListModule} from '@angular/material/grid-list'
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { ChartsComponent } from './widgets/charts/charts.component';
+import { ClientsComponent } from './components/clients/clients.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    ChartsComponent
+    ChartsComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,

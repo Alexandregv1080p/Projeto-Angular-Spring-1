@@ -47,15 +47,6 @@ body {
   font-size: 18px;
   color: #777;
 }
-
-.grid-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 20px;
-  height: 100vh;
-}
-
-
 .top-section {
   background-color: #f0f0f0;
   padding: 20px;
@@ -63,20 +54,21 @@ body {
   margin-top: 20px;
 }
 
-/* Style the bottom section */
+.grid-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .bottom-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* Two columns with equal width */
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
-canvas.canvasjs-chart-canvas{
-  width: 1000px;
-}
-/* Style the items in the bottom section */
+
 .item {
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
 }

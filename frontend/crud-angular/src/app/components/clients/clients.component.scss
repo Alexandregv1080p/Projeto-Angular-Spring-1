@@ -1,0 +1,19 @@
+.grid-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .bottom-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .item {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  

@@ -34,6 +34,9 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { GraphComponent } from './widgets/graph/graph.component';
 import { TableComponent } from './widgets/table/table.component';
+import { CanvadonutchartComponent } from './widgets/canvadonutchart/canvadonutchart.component';
+import { ContactComponent } from './components/contact/contact.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ import { TableComponent } from './widgets/table/table.component';
     ChartsComponent,
     ClientsComponent,
     GraphComponent,
-    TableComponent
+    TableComponent,
+    CanvadonutchartComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +78,8 @@ import { TableComponent } from './widgets/table/table.component';
     MdbScrollspyModule,
     MdbTabsModule,
     MdbTooltipModule,
-    MdbValidationModule
+    MdbValidationModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

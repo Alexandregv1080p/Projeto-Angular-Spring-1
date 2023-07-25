@@ -32,7 +32,8 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
-import { GraphComponent } from './components/widgets/graph/graph.component';
+import { GraphComponent } from './widgets/graph/graph.component';
+import { TableComponent } from './widgets/table/table.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { GraphComponent } from './components/widgets/graph/graph.component';
     HomeComponent,
     ChartsComponent,
     ClientsComponent,
-    GraphComponent
+    GraphComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

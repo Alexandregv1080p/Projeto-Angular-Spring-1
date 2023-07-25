@@ -1,3 +1,4 @@
+import { RegClientComponent } from './components/clients/reg-client/reg-client.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
@@ -14,6 +15,9 @@ const routes: Routes = [
   },{
     path:"contact",
     component:ContactComponent
+  },{
+    path:"clientes/register",
+    component:RegClientComponent
   }
 ];
 

@@ -37,6 +37,9 @@ import { TableComponent } from './widgets/table/table.component';
 import { CanvadonutchartComponent } from './widgets/canvadonutchart/canvadonutchart.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {MatButtonModule} from '@angular/material/button';
+import { RegClientComponent } from './components/clients/reg-client/reg-client.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import {MatButtonModule} from '@angular/material/button';
     GraphComponent,
     TableComponent,
     CanvadonutchartComponent,
-    ContactComponent
+    ContactComponent,
+    RegClientComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +83,10 @@ import {MatButtonModule} from '@angular/material/button';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,10 +7,9 @@ import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
+
 import {ErrorStateMatcher} from '@angular/material/core';
-import {NgIf} from '@angular/common';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -18,22 +17,29 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-interface Food {
-  value: string;
+interface Status {
+  viewValue: string;
+}
+interface Level {
   viewValue: string;
 }
 @Component({
   selector: 'app-reg-client',
   templateUrl: './reg-client.component.html',
-  styleUrls: ['./reg-client.component.scss']
+  styleUrls: ['./reg-client.component.scss',]
 })
 export class RegClientComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   matcher = new MyErrorStateMatcher();
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
+  status: Status[] = [
+    {viewValue: 'Active'},
+    {viewValue: 'Offline'},
+    {viewValue: 'Onboarding'},
   ];
+  levels: Level[] = [
+    {viewValue:'Junior'},
+    {viewValue:'Pleno'},
+    {viewValue:'Senior'}
+  ]
 }

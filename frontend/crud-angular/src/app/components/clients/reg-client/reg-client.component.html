@@ -10,7 +10,7 @@
             <input matInput>
           </mat-form-field></td>
         <td><mat-form-field class="example-full-width">
-            <mat-label>Long Last Name That Will Be Truncated</mat-label>
+            <mat-label>Last Name</mat-label>
             <input matInput>
           </mat-form-field></td>
       </tr>
@@ -20,7 +20,6 @@
       <mat-label>Email</mat-label>
       <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
         placeholder="Ex. pat@example.com">
-      <mat-hint>Errors appear instantly!</mat-hint>
       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
         Please enter a valid email address
       </mat-error>
@@ -28,25 +27,51 @@
         Email is <strong>required</strong>
       </mat-error>
     </mat-form-field>
-
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+        placeholder="Software Enginer">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid title
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Title <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td><mat-form-field>
-            <mat-label>Favorite food</mat-label>
+            <mat-label>Status</mat-label>
             <mat-select>
-              <mat-option *ngFor="let food of foods" [value]="food.value">
-                {{food.viewValue}}
+              <mat-option *ngFor="let stat of status" [value]="status">
+                {{stat.viewValue}}
               </mat-option>
             </mat-select>
-          </mat-form-field></td>
-        <td><mat-form-field class="example-full-width">
-            <mat-label>Postal Code</mat-label>
-            <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-          </mat-form-field></td>
-      </tr>
+          </mat-form-field>
+        </td>
+        <td><mat-form-field>
+          <mat-label>Level</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let stat of levels" [value]="levels">
+              {{stat.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </td>
     </table>
+    
   </form>
-
+  
 
 </mat-card>

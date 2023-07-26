@@ -5,10 +5,17 @@
   
   .example-full-width {
     width: 100%;
-    background-color: #526D82;
+    background-color: white;
   }
   
   td {
     padding-right: 8px;
   }
+  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #aec3d0;
+    color:black
+}
+input{
+  color:black
+}
   

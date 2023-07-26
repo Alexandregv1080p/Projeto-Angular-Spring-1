@@ -18,7 +18,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-
+interface Food {
+  value: string;
+  viewValue: string;
+}
 @Component({
   selector: 'app-reg-client',
   templateUrl: './reg-client.component.html',
@@ -28,4 +31,9 @@ export class RegClientComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   matcher = new MyErrorStateMatcher();
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'},
+  ];
 }

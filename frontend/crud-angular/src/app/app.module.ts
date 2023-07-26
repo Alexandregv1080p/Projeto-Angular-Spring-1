@@ -40,6 +40,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { RegClientComponent } from './components/clients/reg-client/reg-client.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AboutComponent } from './components/about/about.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     TableComponent,
     CanvadonutchartComponent,
     ContactComponent,
-    RegClientComponent
+    RegClientComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +89,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatButtonModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,52 +1,62 @@
-<mat-card style="background-color: #526D82;">
-    <mat-card-content>Duvida? Entre em contato com a gente!</mat-card-content>
+<mat-card style="background-color: white; color: black;">
+  <mat-card-content>Duvida? Entre em contato com a gente!</mat-card-content>
 </mat-card>
-<mat-card style="margin-top: 20px; padding: 20px; background-color: #526D82;">
-    <form class="example-form">
-        <table class="example-full-width" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width">
+<mat-card style="margin-top: 20px; padding: 20px; background-color: white;">
+  <form class="example-form">
+    <table class="example-full-width" cellspacing="0" style="background-color: white;">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
             <mat-label>First name</mat-label>
-            <input matInput>
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
+            <input type="name" matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher">
+            <mat-error *ngIf="nameFormControl.hasError('name') && !nameFormControl.hasError('required')">
+              Please enter a valid name
+            </mat-error>
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+              Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
             <mat-label>Long Last Name That Will Be Truncated</mat-label>
-            <input matInput>
-          </mat-form-field></td>
-        </tr></table>
-      
-        <p>
-          <mat-form-field class="example-full-width">
-            <mat-label>Address</mat-label>
-            <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+            <input type="lastName" matInput [formControl]="lastNameFormControl" [errorStateMatcher]="matcher">
+            <mat-error *ngIf="lastNameFormControl.hasError('lastName') && !lastNameFormControl.hasError('required')">
+              Please enter a valid last name
+            </mat-error>
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+              Last name is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <mat-label>Address 2</mat-label>
-            <textarea matInput></textarea>
-          </mat-form-field>
-        </p>
-      
-        <table class="example-full-width" cellspacing="0"><tr>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>City</mat-label>
-            <input matInput placeholder="Ex. San Francisco">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>State</mat-label>
-            <input matInput placeholder="Ex. California">
-          </mat-form-field></td>
-          <td><mat-form-field class="example-full-width">
-            <mat-label>Postal Code</mat-label>
-            <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-          </mat-form-field></td>
-        </tr></table>
-      </form>
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>Telephone</mat-label>
-          <span matPrefix>+1 &nbsp;</span>
-          <input type="tel" matInput placeholder="555-555-1234">
-          <mat-icon matSuffix>mode_edit</mat-icon>
-        </mat-form-field>
-      </form>
+        </td>
+      </tr>
+    </table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+        placeholder="Ex. pat@example.com">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </form>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Telephone</mat-label>
+      <span matPrefix>+1 &nbsp;</span>
+      <input type="tel" matInput placeholder="555-555-1234">
+      <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+  </form>
+  <p>
+    <mat-form-field class="example-full-width" style="background-color: white;">
+      <mat-label>Descrition</mat-label>
+      <textarea matInput placeholder="Type some text"></textarea>
+    </mat-form-field>
+  </p>
 </mat-card>

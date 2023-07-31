@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  local-postgres-compose:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "Dotinha2012@"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./postgres-data:/var/lib/postgresql/data
+    networks:
+      - postgres-compose-networks
+networks:
+  postgres-compose-networks:
+    driver: bridge

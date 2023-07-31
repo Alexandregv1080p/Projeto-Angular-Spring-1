@@ -4,6 +4,7 @@ package com.alexandre.backend.model.form;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @Data

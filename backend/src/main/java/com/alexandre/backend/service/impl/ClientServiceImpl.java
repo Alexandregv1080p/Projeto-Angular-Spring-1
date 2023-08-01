@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.alexandre.backend.model.Client;
 import com.alexandre.backend.model.form.ClientForm;
@@ -11,20 +12,23 @@ import com.alexandre.backend.repository.ClientRepository;
 import com.alexandre.backend.service.ClientService;
 
 @Service
+@RestController
 public class ClientServiceImpl implements ClientService{
+
     @Autowired
     private ClientRepository clientRepository;
+
     @Override
     public Client create(ClientForm clientForm){
         Client cliente = new Client();
-        cliente.setImage(clientForm.getDate());
+        cliente.setImage(clientForm.getImage());
         cliente.setName(clientForm.getName());
         cliente.setLastName(clientForm.getLastName());
         cliente.setEmail(clientForm.getEmail());
         cliente.setStatus(clientForm.getStatus());
         cliente.setPosition(clientForm.getPosition());
         cliente.setTitle(clientForm.getTitle());
-        cliente.setDate(clientForm.getDate());
+        cliente.setDataNasc(clientForm.getDataNasc());
         return clientRepository.save(cliente);
     }
     @Override
@@ -34,14 +38,14 @@ public class ClientServiceImpl implements ClientService{
     @Override
     public Client update(Long id,ClientForm clientForm) {
         Client cliente = clientRepository.getReferenceById(id);
-        cliente.setImage(clientForm.getDate());
+        cliente.setImage(clientForm.getImage());
         cliente.setName(clientForm.getName());
         cliente.setLastName(clientForm.getLastName());
         cliente.setEmail(clientForm.getEmail());
         cliente.setStatus(clientForm.getStatus());
         cliente.setPosition(clientForm.getPosition());
         cliente.setTitle(clientForm.getTitle());
-        cliente.setDate(clientForm.getDate());
+        cliente.setDataNasc(clientForm.getDataNasc());
         return clientRepository.save(cliente);
     }
     @Override

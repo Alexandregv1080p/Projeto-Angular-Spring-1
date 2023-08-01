@@ -1,13 +1,9 @@
 package com.alexandre.backend.model.form;
 
 
-import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@Data
 @Getter
 @Setter
 public class ClientForm {
@@ -19,6 +15,6 @@ public class ClientForm {
     private String title;
     private String status;
     private String position;
-    private String date;
+    private String dataNasc;
 
 }

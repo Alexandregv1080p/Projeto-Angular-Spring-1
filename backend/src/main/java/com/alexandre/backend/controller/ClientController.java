@@ -3,7 +3,6 @@ package com.alexandre.backend.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,15 +19,20 @@ import com.alexandre.backend.service.impl.ClientServiceImpl;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/clients")
 public class ClientController {
     
     @Autowired
     private ClientServiceImpl service;
 
-    @GetMapping("/clients")
+    @GetMapping
     public List<Client> getAll(){
         return service.getAll();
+    }
+    @GetMapping(value = "/{id}")
+    @ResponseBody
+    public Client get(@PathVariable Long id){
+        return service.get(id);
     }
     @PostMapping
     @ResponseBody

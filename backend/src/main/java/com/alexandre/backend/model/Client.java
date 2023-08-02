@@ -23,14 +23,13 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tb_alunos")
+@Table(name = "tb_clients")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Lob
-    @Column(columnDefinition = "MEDIUMBLOB", name="img")
+    @Column(columnDefinition = "TEXT", name="img")
     private String image;
     @Column(name="name")
     private String name;

@@ -1,9 +1,10 @@
 export interface Client{
     id: string;
-    img: string;
+    image: string;
     name: string;
     lastname: string;
     title: string;
     position:string;
-    status: boolean;
+    status: string;
+    dataNasc: string;
 }

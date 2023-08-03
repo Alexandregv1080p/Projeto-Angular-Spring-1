@@ -33,7 +33,6 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { GraphComponent } from './widgets/graph/graph.component';
-import { TableComponent } from './widgets/table/table.component';
 import { CanvadonutchartComponent } from './widgets/canvadonutchart/canvadonutchart.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -44,7 +43,11 @@ import { AboutComponent } from './components/about/about.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'; 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import { TableComponent } from './widgets/table/table.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 @NgModule({
@@ -55,11 +58,11 @@ import { HttpClient } from '@angular/common/http';
     ChartsComponent,
     ClientsComponent,
     GraphComponent,
-    TableComponent,
     CanvadonutchartComponent,
     ContactComponent,
     RegClientComponent,
-    AboutComponent
+    AboutComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -75,21 +78,6 @@ import { HttpClient } from '@angular/common/http';
     MatGridListModule,
     CanvasJSAngularChartsModule,
     HighchartsChartModule,
-    MdbAccordionModule,
-    MdbCarouselModule,
-    MdbCheckboxModule,
-    MdbCollapseModule,
-    MdbDropdownModule,
-    MdbFormsModule,
-    MdbModalModule,
-    MdbPopoverModule,
-    MdbRadioModule,
-    MdbRangeModule,
-    MdbRippleModule,
-    MdbScrollspyModule,
-    MdbTabsModule,
-    MdbTooltipModule,
-    MdbValidationModule,
     MatButtonModule,
     MatFormFieldModule,
     FormsModule,
@@ -97,7 +85,9 @@ import { HttpClient } from '@angular/common/http';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    HttpClient
+    HttpClientModule,
+    MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

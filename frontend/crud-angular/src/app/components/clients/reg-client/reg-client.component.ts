@@ -6,9 +6,14 @@ import {
   Validators,
   FormsModule,
   ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
 } from '@angular/forms';
 
 import {ErrorStateMatcher} from '@angular/material/core';
+import { Router } from '@angular/router';
+import { first } from 'rxjs';
+import { ClientServiceService } from 'src/app/services/client-service.service';
 
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -29,6 +34,20 @@ interface Level {
   styleUrls: ['./reg-client.component.scss',]
 })
 export class RegClientComponent {
+  form: FormGroup
+  constructor(private clientService: ClientServiceService,private router: Router,private formBuilder: FormBuilder){
+    this.form = this.formBuilder.group({
+      image:[null],
+      name:[null],
+      email:[null],
+      lastName:[null],
+      title:[null],
+      position:[null],
+      status:[null],
+      dataNasc:[null]
+    })
+  }
+  
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   matcher = new MyErrorStateMatcher();
@@ -42,4 +61,12 @@ export class RegClientComponent {
     {viewValue:'Pleno'},
     {viewValue:'Senior'}
   ]
+
+  onCancel():void{
+    this.router.navigate(["clientes"])
+  }
+  onSubmit(){
+    this.clientService.save(this.form.value)
+      .subscribe(result => console.log(result))
+  }
 }

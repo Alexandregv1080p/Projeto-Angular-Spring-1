@@ -1,4 +1,5 @@
 export interface Client{
+    email: string;
     id: string;
     image: string;
     name: string;

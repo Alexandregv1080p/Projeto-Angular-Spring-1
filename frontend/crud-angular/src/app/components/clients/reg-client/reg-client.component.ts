@@ -4,8 +4,6 @@ import {
   FormGroupDirective,
   NgForm,
   Validators,
-  FormsModule,
-  ReactiveFormsModule,
   FormBuilder,
   FormGroup,
 } from '@angular/forms';
@@ -35,7 +33,9 @@ interface Level {
 })
 export class RegClientComponent {
   form: FormGroup
-  constructor(private clientService: ClientServiceService,private router: Router,private formBuilder: FormBuilder){
+  constructor(private clientService: ClientServiceService,
+    private router: Router,
+    private formBuilder: FormBuilder){
     this.form = this.formBuilder.group({
       image:[null],
       name:[null],
@@ -51,6 +51,7 @@ export class RegClientComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   matcher = new MyErrorStateMatcher();
+
   status: Status[] = [
     {viewValue: 'Active'},
     {viewValue: 'Offline'},

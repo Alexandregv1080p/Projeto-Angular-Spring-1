@@ -17,21 +17,6 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { ChartsComponent } from './widgets/charts/charts.component';
 import { ClientsComponent } from './components/clients/clients.component';
-import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
-import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
-import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
-import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
-import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
-import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
-import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
-import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
-import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
-import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
-import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
-import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
-import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
-import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
-import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { GraphComponent } from './widgets/graph/graph.component';
 import { CanvadonutchartComponent } from './widgets/canvadonutchart/canvadonutchart.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -47,6 +32,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { TableComponent } from './widgets/table/table.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { DelClientComponent } from './components/clients/del-client/del-client.component';
+import { UpdClientComponent } from './components/clients/upd-client/upd-client.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -62,7 +50,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     ContactComponent,
     RegClientComponent,
     AboutComponent,
-    TableComponent
+    TableComponent,
+    DelClientComponent,
+    UpdClientComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +77,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatNativeDateModule,
     HttpClientModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

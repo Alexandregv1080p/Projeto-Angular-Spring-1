@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Client } from 'src/app/model/Client';
 import { ClientServiceService } from 'src/app/services/client-service.service';
 import { TableComponent } from 'src/app/widgets/table/table.component';
 @Component({
@@ -7,13 +9,16 @@ import { TableComponent } from 'src/app/widgets/table/table.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-	
-  tableComponent: TableComponent;
-
-	constructor(){
-    this.tableComponent = new TableComponent(clientService);
-  }
-  ngOnInit(){
+  
+  
+  
+	constructor(public clientService: ClientServiceService){
     
   }
+  ngOnInit(): void {
+    this.clientService.list().subscribe(clients => {
+      this.clientService.numberOfIds = clients.length;
+    });
+  }
+  
 }

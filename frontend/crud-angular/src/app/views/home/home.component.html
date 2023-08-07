@@ -5,7 +5,7 @@
   <section class="cards">
     <div class="card" style="background-color: #03C988;">
       <h2>Usuarios cadastrados</h2>
-      <p>{{  }}</p>
+      <p *ngIf="clientService.numberOfIds > 0">{{clientService.numberOfIds }}</p>
     </div>
     <div class="card" style="background-color: #1C82AD;" >
       <h2>Visitas</h2>

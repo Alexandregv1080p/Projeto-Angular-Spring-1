@@ -46,8 +46,8 @@
   </ng-container>
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef >Ações </th>
-    <td mat-cell *matCellDef="let row">
-    <a (edit)="onEdit($event)">
+    <td mat-cell *matCellDef="let client">
+    <a (click)="navigateToClientUpdate(client.id)">
       <i class="material-icons editar">
         edit
       </i>

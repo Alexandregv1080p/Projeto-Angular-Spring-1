@@ -3,12 +3,7 @@ import {
   FormControl,
   FormGroupDirective,
   NgForm,
-  Validators,
-  FormsModule,
-  ReactiveFormsModule,
-  FormBuilder,
-  FormGroup,
-  NonNullableFormBuilder,
+  Validators
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -28,46 +23,28 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./upd-client.component.scss']
 })
 
-
-
 export class UpdClientComponent implements OnInit {
+  cliente!: Client;
+
   
-  form = this.formBuilder.group({
-    image:[''],
-    name:[''],
-    email:[''],
-    lastName:[''],
-    title:[''],
-    position:[''],
-    status:[''],
-    dataNasc:['']
-  })
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   matcher = new MyErrorStateMatcher();
   
   constructor(
     private route:ActivatedRoute,
     private router:Router,
-    private clienteService:ClientServiceService,
-    private formBuilder: NonNullableFormBuilder){ }
+    private clienteService:ClientServiceService){ }
   
-  ngOnInit(): void{
-    const client: Client = this.route.snapshot.data['client']
-    this.form.setValue({
-      id:client.id,
-      image:client.image,
-      name:client.name,
-      email:client.email,
-      lastname:client.lastname,
-      title:client.title,
-      position:client.position,
-      status:client.status,
-      dataNasc:client.dataNasc
+  ngOnInit():void{
+    const id = this.route.snapshot.paramMap.get('id')
+    this.clienteService.readById(id).subscribe(client=>{
+      this.cliente = client
     })
   }
-  onSubmit(){
-    this.clienteService.save(this.form.value)
-      .subscribe(result => this.onSucess())
+  updateClient(){
+    this.clienteService.update(this.cliente).subscribe(()=>{
+      this.clienteService.showMensage("Cliente atualizado com sucesso!")
+    })
   }
   cancel():void{
     this.router.navigate(["clientes"])

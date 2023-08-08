@@ -35,9 +35,10 @@ export class ClientServiceService {
       })
     )
   }
-  loadById(id: string):Observable<Client>{
-    return this.httpClient.get<Client>(`${this.API}/${id}`)
+  readById(id: number): Observable<Client> {
+    return this.httpClient.get<Client>(`${this.API}/${id}`);
   }
+  
   save(record: Client){
     return this.httpClient.post<Client>(this.API,record)
       .pipe(first())

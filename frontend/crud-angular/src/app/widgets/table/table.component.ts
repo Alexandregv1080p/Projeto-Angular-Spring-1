@@ -21,7 +21,8 @@ export class TableComponent{
   onDelete(){
 
   }
-  onEdit(cliente: Client){
-    this.router.navigate([`clientes/update-client/`,cliente.id]) 
+  navigateToClientUpdate(id:number){
+    this.router.navigate([`clientes/update-client/${id}`])
   }
+  
 }

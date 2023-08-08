@@ -1,17 +1,17 @@
 <h1>Cadastrar clientes</h1>
 <mat-card style="padding: 20px; background-color: #f4f6f7;">
   <mat-card-content>Cadastre o usuario</mat-card-content>
-  <form class="example-form" [formGroup]="form">
+  <form class="example-form">
 
     <div class="mb-3">
       <label for="formFile" class="form-label">Default file input example</label>
-      <input class="form-control" type="file" id="formFile" formControlName="image">
+      <input class="form-control" type="file" id="formFile" [(ngModel)]="cliente.image">
     </div>
 
     
         <mat-form-field class="example-full-width">
             <mat-label>First name</mat-label>
-            <input matInput formControlName="name">
+            <input matInput formControlName="name" [(ngModel)]="cliente.name">
         </mat-form-field>
         <mat-form-field class="example-full-width">
             <mat-label>Last Name</mat-label>
@@ -20,7 +20,7 @@
 
     <mat-form-field class="example-full-width">
       <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
+      <input type="email" matInput [(ngModel)]="cliente.name" [errorStateMatcher]="matcher"
         placeholder="Ex. pat@example.com">
       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
         Please enter a valid email address
@@ -31,7 +31,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Title</mat-label>
-      <input type="email" matInput formControlName="title" [errorStateMatcher]="matcher"
+      <input type="email" matInput [(ngModel)]="cliente.title" [errorStateMatcher]="matcher"
         placeholder="Software Enginer">
       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
         Please enter a valid title
@@ -45,7 +45,7 @@
         <td>
           <mat-form-field>
             <mat-label>Status</mat-label>
-            <mat-select matInput formControlName="status">
+            <mat-select [(ngModel)]="cliente.status">
               <mat-option value="Ativo">Ativo</mat-option>
               <mat-option value="Em progresso">Em progresso</mat-option>
               <mat-option value="Desativo">Desativo</mat-option>
@@ -75,7 +75,7 @@
         </td>
     </table>
     <mat-card-actions>
-      <button mat-raised-button (click)="onSubmit()">Salvar</button>
+      <button mat-raised-button (click)="updateClient()">Salvar</button>
       <button mat-raised-button (click)="cancel()">Cancelar</button>
     </mat-card-actions>
   </form>

@@ -35,8 +35,12 @@ export class ClientServiceService {
       })
     )
   }
-  readById(id: number): Observable<Client> {
-    return this.httpClient.get<Client>(`${this.API}/${id}`);
+  read(): Observable<Client[]> {
+    return this.httpClient.get<Client[]>(this.API)
+  }
+  readById(id: string): Observable<Client> {
+    let url = `${this.API}/${id}`
+    return this.httpClient.get<Client>(url);
   }
   
   save(record: Client){

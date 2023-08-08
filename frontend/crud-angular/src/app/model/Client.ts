@@ -3,7 +3,7 @@ export interface Client{
     id: string;
     image: string;
     name: string;
-    lastname: string;
+    lastName: string;
     title: string;
     position:string;
     status: string;

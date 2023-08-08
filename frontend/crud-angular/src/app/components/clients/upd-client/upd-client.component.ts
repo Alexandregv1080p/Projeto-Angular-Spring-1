@@ -24,9 +24,9 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 
 export class UpdClientComponent implements OnInit {
-  cliente!: Client;
-
   
+  cliente!: Client 
+
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   matcher = new MyErrorStateMatcher();
   
@@ -36,7 +36,7 @@ export class UpdClientComponent implements OnInit {
     private clienteService:ClientServiceService){ }
   
   ngOnInit():void{
-    const id = this.route.snapshot.paramMap.get('id')
+    let id = this.route.snapshot.params['id'];
     this.clienteService.readById(id).subscribe(client=>{
       this.cliente = client
     })

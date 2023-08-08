@@ -11,18 +11,21 @@ import { Router } from '@angular/router';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent{
+export class TableComponent implements OnInit{
   clients: Observable<Client[]>
-  displayedColumns: string[] = ['id', 'image', 'name', 'lastName','email','title','position','status','dataNasc','action']; 
+  client!: Client[];
+
+  displayedColumns: string[] = [ 'image', 'name', 'lastName','email','title','position','status','dataNasc','action']; 
 
   constructor(private router:Router,private clientService: ClientServiceService){
     this.clients = this.clientService.list()
+    
   }
-  onDelete(){
-
+  ngOnInit(): void {
+    this.clientService.read().subscribe(client => {
+      this.client = client
+    })
   }
-  navigateToClientUpdate(id:number){
-    this.router.navigate([`clientes/update-client/${id}`])
-  }
+  
   
 }

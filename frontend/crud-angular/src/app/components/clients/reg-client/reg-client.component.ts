@@ -68,6 +68,10 @@ export class RegClientComponent {
   }
   onSubmit(){
     this.clientService.save(this.form.value)
-      .subscribe(result => console.log(result))
+      .subscribe(() => {
+        this.clientService.showMensage("Cliente cadastrado com sucesso!")
+        this.router.navigate(["clientes"])
+      })
+      
   }
 }

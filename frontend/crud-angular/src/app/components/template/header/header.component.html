@@ -10,11 +10,22 @@
 <mat-sidenav-container >
     <mat-sidenav style="background-color: #526D82;" [(opened)]="opened" mode="side" fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list >
-            <a routerLink="/" mat-list-item >Home</a>
-            <a routerLink="/clientes" mat-list-item >Workers</a>
-            <a routerLink="/" mat-list-item >Chart</a>
-            <a routerLink="/contact" mat-list-item >Contact</a>
-            <a routerLink="/about" mat-list-item >About</a>
+            <a routerLink="/" mat-list-item >
+                <mat-icon>assessment</mat-icon> 
+                Home
+            </a>
+            <a routerLink="/clientes" mat-list-item >
+                <mat-icon>assignment_ind</mat-icon>
+                Workers
+            </a>
+            <a routerLink="/contact" mat-list-item >
+                <mat-icon>perm_phone_msg</mat-icon>
+                Contact
+            </a>
+            <a routerLink="/about" mat-list-item >
+                <mat-icon>zoom_in</mat-icon>
+                About
+            </a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">

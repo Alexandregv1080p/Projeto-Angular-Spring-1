@@ -36,14 +36,12 @@ export class DelClientComponent {
     })
   }
   deleteClient(){
-    this.clienteService.remove(this.cliente.id).subscribe(()=>{
+    this.clienteService.remove(this.cliente.id).subscribe(() => {
       this.clienteService.showMensage("Cliente atualizado com sucesso!")
+      this.router.navigate(["clientes"])
     })
   }
   cancel():void{
     this.router.navigate(["clientes"])
-  }
-  onSucess(){
-    this.clienteService.showMensage("Cliente atualizado com sucesso!")
   }
 }

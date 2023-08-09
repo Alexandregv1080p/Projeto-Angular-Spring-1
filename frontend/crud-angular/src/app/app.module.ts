@@ -35,6 +35,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DelClientComponent } from './components/clients/del-client/del-client.component';
 import { UpdClientComponent } from './components/clients/upd-client/upd-client.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ChartPieComponent } from './widgets/chart-pie/chart-pie.component';
 
 
 
@@ -52,7 +53,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AboutComponent,
     TableComponent,
     DelClientComponent,
-    UpdClientComponent
+    UpdClientComponent,
+    ChartPieComponent
   ],
   imports: [
     BrowserModule,

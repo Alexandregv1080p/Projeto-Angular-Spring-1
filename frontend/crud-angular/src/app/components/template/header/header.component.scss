@@ -15,3 +15,7 @@ mat-icon {
 .example-header-image {
   background-size: cover;
 }
+::ng-deep .mat-toolbar{
+  z-index: 998;
+  position: fixed
+}

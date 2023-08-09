@@ -73,3 +73,17 @@ body {
   border: 1px solid #ccc;
   padding: 10px;
 }
+.example-header-image mat-icon{
+  font-size: 45px;
+  overflow: initial;
+}
+.hight-cards{
+  border-radius: 10px;
+}
+.hight-cards mat-card-header,mat-card-title, mat-card-subtitle{
+  background-color: white;
+  color: black;
+}
+.hight-cards mat-card-content{
+  padding: 10px;
+}

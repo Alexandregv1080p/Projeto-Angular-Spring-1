@@ -1,5 +1,7 @@
 <mat-toolbar style="background-color: #27374D;">
-    <mat-icon (click)="opened=!opened">menu</mat-icon>
+    <mat-icon 
+   [@rotatedState]="iconState" 
+    (click)="toggleIcon()" >menu</mat-icon>
     <span>My App</span>
     <span class="example-spacer"></span>
     <mat-icon>favorite</mat-icon>
@@ -13,8 +15,6 @@
             <a routerLink="/" mat-list-item >Chart</a>
             <a routerLink="/contact" mat-list-item >Contact</a>
             <a routerLink="/about" mat-list-item >About</a>
-            <a routerLink="/" mat-list-item >Home</a>
-            <a routerLink="/" mat-list-item >Home</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">

@@ -18,3 +18,9 @@
   .example-full-width {
     width: 100%;
   }
+  ::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: rgb(0 0 0 / 87%);
+}
+  ::ng-deep .cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel {
+  background-color: #aec3d0;
+}

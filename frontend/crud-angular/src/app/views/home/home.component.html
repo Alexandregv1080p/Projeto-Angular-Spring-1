@@ -2,20 +2,59 @@
   <header class="header">
     <h1>Welcome to the Dashboard</h1>
   </header>
+
   <section class="cards">
-    <div class="card" style="background-color: #03C988;">
-      <h2>Usuarios cadastrados</h2>
-      <p *ngIf="clientService.numberOfIds > 0">{{clientService.numberOfIds }}</p>
-    </div>
-    <div class="card" style="background-color: #1C82AD;" >
-      <h2>Visitas</h2>
-      <p>500</p>
-    </div>
-    <div class="card">
-      <h2>Total Sales</h2>
-      <p>$50,000</p>
-    </div>
+    <mat-card class="example-card hight-cards">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"><mat-icon>file_download</mat-icon></div>
+        <mat-card-title>100</mat-card-title>
+        <mat-card-subtitle>Dowloads</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content >
+        <p>
+            Estes são dados ficticios
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="example-card hight-cards">
+      <mat-card-header >
+        <div mat-card-avatar class="example-header-image"><mat-icon>account_box</mat-icon></div>
+        <mat-card-title *ngIf="clientService.numberOfIds > 0">{{clientService.numberOfIds }}</mat-card-title>
+        <mat-card-subtitle>Usuarios cadastrados</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content style="background-color: #03C988;;">
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="example-card hight-cards">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"><mat-icon>file_download</mat-icon></div>
+        <mat-card-title>100</mat-card-title>
+        <mat-card-subtitle>Dowloads</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content >
+        <p>
+            Estes são dados ficticios
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="example-card hight-cards">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"><mat-icon>file_download</mat-icon></div>
+        <mat-card-title>100</mat-card-title>
+        <mat-card-subtitle>Dowloads</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content >
+        <p>
+            Estes são dados ficticios
+        </p>
+      </mat-card-content>
+    </mat-card>
   </section>
+
+
   <div class="grid-container">        
     <mat-card><app-charts></app-charts></mat-card>
     

@@ -18,4 +18,12 @@
 input{
   color:black
 }
-  
+.card-central{
+  width: 940px;
+  display: flex;
+  margin: 0 auto;
+  color:black
+}
+.card-central:hover{
+  background-color: aqua;
+}

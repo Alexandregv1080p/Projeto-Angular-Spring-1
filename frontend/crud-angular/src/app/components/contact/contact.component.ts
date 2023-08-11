@@ -3,14 +3,10 @@ import {
   FormControl,
   FormGroupDirective,
   NgForm,
-  Validators,
-  FormsModule,
-  ReactiveFormsModule,
+  Validators
 } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
-import {NgIf} from '@angular/common';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { EmailserviceService } from 'src/app/services/emailservice.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -28,4 +24,32 @@ export class ContactComponent {
   nameFormControl = new FormControl('', [Validators.required, Validators.min(3)]);
   lastNameFormControl = new FormControl('', [Validators.required,Validators.min(3)]);
   matcher = new MyErrorStateMatcher();
+
+  emailData: any = {
+    name: '',
+    lastname: '',
+    email: '',
+    telephone: '',
+    description: ''
+  };
+
+  constructor(private emailService: EmailserviceService) {}
+
+  sendEmail() {
+    this.emailService.sendEmail(this.emailData)
+      .subscribe(response => {
+        console.log('Email sent:', response);
+        this.clearForm();
+      });
+  }
+
+  clearForm() {
+    this.emailData = {
+      name: '',
+      lastname: '',
+      email: '',
+      Telephone: '',
+      Description: ''
+    };
+  }
 }

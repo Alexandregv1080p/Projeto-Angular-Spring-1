@@ -40,7 +40,7 @@
       <mat-label>Descrition</mat-label>
       <textarea matInput type="text" name="description" [(ngModel)]="emailData.description" placeholder="Type some text"></textarea>
     </mat-form-field>
-    <button type="submit" mat-raised-button>Enviar</button>
+    <button type="submit" mat-raised-button (click)="sendEmail()">Enviar</button>
   </p>
   
   </form>

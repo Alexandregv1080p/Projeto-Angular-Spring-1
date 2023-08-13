@@ -6,6 +6,7 @@ import {
   Validators
 } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
+import { catchError, tap } from 'rxjs';
 import { EmailserviceService } from 'src/app/services/emailservice.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -37,10 +38,18 @@ export class ContactComponent {
 
   sendEmail() {
     this.emailService.sendEmail(this.emailData)
-      .subscribe(response => {
-        console.log('Email sent:', response);
-        this.clearForm();
-      });
+    .subscribe(
+      response => {
+        console.log('Server response:', response);
+        if (response === 'Email sent ') {
+          console.log('Email sent successfully');
+          this.clearForm();
+        }
+      },
+      error => {
+        console.error('Error sending email:', error);
+      }
+    );
   }
 
   clearForm() {
@@ -48,8 +57,8 @@ export class ContactComponent {
       name: '',
       lastname: '',
       email: '',
-      Telephone: '',
-      Description: ''
+      telephone: '',
+      description: ''
     };
   }
 }

@@ -7,11 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class EmailserviceService {
 
-  private apiUrl = '/api/email/send';
+  private baseUrl = '/api/email/send';
 
-    constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-    sendEmail(emailData: any): Observable<any> {
-        return this.http.post(this.apiUrl, emailData);
-    }
+  sendEmail(emailData: any): Observable<any> {
+   return this.http.post(this.baseUrl, emailData, { responseType: 'text' });  }
 }

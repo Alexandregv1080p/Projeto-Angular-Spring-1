@@ -1,29 +1,26 @@
+*{
+  color: black;
+}
+button{
+  width: 102px;
+  margin: 14px;
+}
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #aec3d0;
+}
 .example-form {
-    
-    width: 100%;
-  }
-  
-  .example-full-width {
-    width: 100%;
-    background-color: white;
-  }
-  
-  td {
-    padding-right: 8px;
-  }
-  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-    background-color: #aec3d0;
-    color:black
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 15px;
 }
-input{
-  color:black
+
+.example-full-width {
+  width: 100%;
 }
-.card-central{
-  width: 940px;
-  display: flex;
-  margin: 0 auto;
-  color:black
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: rgb(0 0 0 / 87%);
 }
-.card-central:hover{
-  background-color: aqua;
+::ng-deep .cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel {
+background-color: #aec3d0;
 }

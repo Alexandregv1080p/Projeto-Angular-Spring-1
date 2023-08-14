@@ -1,18 +1,18 @@
-package com.alexandre.backend.configuration;
-
-import java.util.Properties;
-
+package com.alexandre.backend.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
+import java.util.Properties;
+
 @Configuration
 public class MailConfig {
+
     @Bean
     public JavaMailSender javaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        mailSender.setHost("smtp.example.com");
+        mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
         mailSender.setUsername("alexandregv1999@gmail.com");
         mailSender.setPassword("atnnbhmbftqnxgua");
@@ -26,4 +26,3 @@ public class MailConfig {
         return mailSender;
     }
 }
-

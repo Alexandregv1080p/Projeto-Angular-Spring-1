@@ -7,5 +7,5 @@ import com.alexandre.backend.model.Client;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client,Long>{
-
+    
 }

@@ -26,7 +26,7 @@ public class BackendApplication extends SpringBootServletInitializer {
 			c.setLastName("Gomes");
 			c.setEmail("alex@mail.com");
 			c.setStatus("Ativo");
-			c.setPosition("Junior");
+			c.setPosition( "Junior");
 			c.setTitle("Software Developer");
 			c.setDataNasc("1999-10-30");
 

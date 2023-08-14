@@ -28,20 +28,25 @@ export class ContactComponent {
 
   emailData: any = {
     name: '',
-    lastname: '',
     email: '',
     telephone: '',
-    description: ''
+    description: '',
+    subject: ''
   };
 
   constructor(private emailService: EmailserviceService) {}
 
   sendEmail() {
-    this.emailService.sendEmail(this.emailData)
+    const remetenteEmail = this.emailData.email;
+    const emailData = {
+      ...this.emailData,
+      from: remetenteEmail 
+    };
+  this.emailService.sendEmail(emailData)
     .subscribe(
       response => {
         console.log('Server response:', response);
-        if (response === 'Email sent ') {
+        if (response === 'Email sent successfully') {
           console.log('Email sent successfully');
           this.clearForm();
         }
@@ -55,10 +60,10 @@ export class ContactComponent {
   clearForm() {
     this.emailData = {
       name: '',
-      lastname: '',
       email: '',
       telephone: '',
-      description: ''
+      description: '',
+      subject: ''
     };
   }
 }

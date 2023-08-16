@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HeaderComponent } from './components/template/header/header.component'
 import {MatInputModule} from '@angular/material/input';
-import { HomeComponent } from './views/home/home.component'
 import {MatListModule} from '@angular/material/list'
 import {MatCardModule} from '@angular/material/card';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -36,6 +35,8 @@ import { DelClientComponent } from './components/clients/del-client/del-client.c
 import { UpdClientComponent } from './components/clients/upd-client/upd-client.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ChartPieComponent } from './widgets/chart-pie/chart-pie.component';
+import { LoginScreenComponent } from './views/login-screen/login-screen.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -54,7 +55,9 @@ import { ChartPieComponent } from './widgets/chart-pie/chart-pie.component';
     TableComponent,
     DelClientComponent,
     UpdClientComponent,
-    ChartPieComponent
+    ChartPieComponent,
+    LoginScreenComponent,
+    
   ],
   imports: [
     BrowserModule,

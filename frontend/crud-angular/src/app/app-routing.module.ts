@@ -30,6 +30,9 @@ const routes: Routes = [
   },{
     path:"about",
     component: AboutComponent
+  }{
+    path: 'login',
+    loadChildren: () => import('./').then(m => m.LoginModule)
   }
 ];
 

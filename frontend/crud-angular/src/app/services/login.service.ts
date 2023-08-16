@@ -6,18 +6,8 @@ import { Injectable } from '@angular/core';
 export class LoginService {
 
   constructor() { }
-  login(username: string, password: string): boolean {
-    if (username === 'user' && password === 'password') {
-      localStorage.setItem('isLoggedIn', 'true');
-      return true;
-    }
-    return false;
-  }
-  logout(): void {
-    localStorage.removeItem('isLoggedIn');
-  }
-
   isLoggedIn(): boolean {
-    return localStorage.getItem('isLoggedIn') === 'true';
+    // Lógica para verificar se o usuário está autenticado, por exemplo, usando um token JWT
+    return localStorage.getItem('token') !== null;
   }
 }

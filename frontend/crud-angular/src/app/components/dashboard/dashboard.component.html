@@ -1,1 +1,34 @@
-<app-header></app-header>
+<mat-toolbar mode="" fixedInViewport="true" style="background-color: #27374D;">
+    <mat-icon 
+   [@rotatedState]="iconState" 
+    (click)="toggleIcon()" >menu</mat-icon>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <mat-icon>favorite</mat-icon>
+    <mat-icon>share</mat-icon>
+</mat-toolbar>
+<mat-sidenav-container >
+    <mat-sidenav style="background-color: #526D82;" [(opened)]="opened" mode="side" fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list >
+            <a routerLink="/home" mat-list-item >
+                <mat-icon>assessment</mat-icon> 
+                Home
+            </a>
+            <a routerLink="./clientes" mat-list-item >
+                <mat-icon>assignment_ind</mat-icon>
+                Workers
+            </a>
+            <a routerLink="./contact" mat-list-item >
+                <mat-icon>perm_phone_msg</mat-icon>
+                Contact
+            </a>
+            <a routerLink="./about" mat-list-item >
+                <mat-icon>zoom_in</mat-icon>
+                About
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>  

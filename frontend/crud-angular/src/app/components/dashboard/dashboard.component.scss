@@ -1,0 +1,35 @@
+.content {
+    margin-top:60px;
+    padding: 16px;
+    background-color: #DDE6ED;
+    height: 100%;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+mat-sidenav{
+    width: 200px;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+.example-header-image {
+  background-size: cover;
+}
+::ng-deep .mat-toolbar{
+  z-index: 998;
+  position: fixed
+}
+mat-nav-list a mat-icon{
+  padding-top:5px;
+  padding-right: 15px;
+}
+mat-nav-list{
+  text-align: left;
+}
+::ng-deep .mdc-list-item.mdc-list-item--with-one-line {
+  width: 175px;
+  padding: 27px;
+  margin-left: 15px;
+}

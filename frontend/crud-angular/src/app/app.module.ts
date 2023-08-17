@@ -7,12 +7,18 @@ import { AppComponent } from './app.component';
 import { DashboardRoutingModule } from './components/dashboard-routing.module';
 import { CommonModule } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginComponent } from './authenticate/login/login.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { FormControl } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +27,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DashboardRoutingModule,
     CommonModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormControl
   ],
   providers: [],
   bootstrap: [AppComponent]

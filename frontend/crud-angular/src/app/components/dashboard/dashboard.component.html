@@ -1,4 +1,4 @@
-<mat-toolbar mode="" fixedInViewport="true" style="background-color: #27374D;">
+<mat-toolbar fixedInViewport="true" style="background-color: #27374D;">
     <mat-icon 
    [@rotatedState]="iconState" 
     (click)="toggleIcon()" >menu</mat-icon>
@@ -14,15 +14,15 @@
                 <mat-icon>assessment</mat-icon> 
                 Home
             </a>
-            <a routerLink="./clientes" mat-list-item >
+            <a routerLink="/clientes" mat-list-item >
                 <mat-icon>assignment_ind</mat-icon>
                 Workers
             </a>
-            <a routerLink="./contact" mat-list-item >
+            <a routerLink="/contact" mat-list-item >
                 <mat-icon>perm_phone_msg</mat-icon>
                 Contact
             </a>
-            <a routerLink="./about" mat-list-item >
+            <a routerLink="/about" mat-list-item >
                 <mat-icon>zoom_in</mat-icon>
                 About
             </a>

@@ -6,7 +6,6 @@ import {
   Validators
 } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
-import { catchError, tap } from 'rxjs';
 import { EmailserviceService } from 'src/app/services/emailservice.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

@@ -1,4 +1,4 @@
-import { DashboardComponent } from './../components/dashboard/dashboard.component';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -19,8 +19,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -31,13 +29,12 @@ import { RegClientComponent } from '../components/clients/reg-client/reg-client.
 import { UpdClientComponent } from '../components/clients/upd-client/upd-client.component';
 import { ContactComponent } from '../components/contact/contact.component';
 import { HomeComponent } from '../components/home/home.component';
-import { LoginScreenComponent } from '../views/login-screen/login-screen.component';
 import { CanvadonutchartComponent } from '../widgets/canvadonutchart/canvadonutchart.component';
 import { ChartPieComponent } from '../widgets/chart-pie/chart-pie.component';
 import { ChartsComponent } from '../widgets/charts/charts.component';
 import { GraphComponent } from '../widgets/graph/graph.component';
 import { TableComponent } from '../widgets/table/table.component';
-import { CommonModule } from '@angular/common';
+
 
 
 @NgModule({
@@ -54,15 +51,11 @@ import { CommonModule } from '@angular/common';
     DelClientComponent,
     UpdClientComponent,
     ChartPieComponent,
-    LoginScreenComponent,
     DashboardComponent
-    
   ],
   imports: [
-    CommonModule,
-    BrowserModule,
+    
     DashboardRoutingModule,
-    BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
@@ -83,7 +76,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     MatTableModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    
   ]
 })
 export class DashboardModule { }

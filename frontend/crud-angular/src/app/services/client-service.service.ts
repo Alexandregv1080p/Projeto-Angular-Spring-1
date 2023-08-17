@@ -1,5 +1,5 @@
 import { Client } from 'src/app/model/Client';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, first, tap } from 'rxjs';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ClientServiceService {
 
-  private readonly API = 'api/clients'
+  private readonly API = 'http://localhost:8080/api/clients'
   clients: Client[] = [];
   numberOfIds: number = 0;
   constructor(

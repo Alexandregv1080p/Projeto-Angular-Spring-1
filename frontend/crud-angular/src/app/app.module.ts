@@ -1,10 +1,12 @@
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardRoutingModule } from './components/dashboard-routing.module';
+import { CommonModule } from '@angular/common';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -14,8 +16,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
     DashboardRoutingModule,
-    BrowserAnimationsModule,AppRoutingModule
+    CommonModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

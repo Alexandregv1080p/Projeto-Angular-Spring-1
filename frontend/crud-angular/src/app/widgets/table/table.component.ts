@@ -21,7 +21,9 @@ export class TableComponent implements OnInit{
     this.clients = this.clientService.list()
     
   }
+
   ngOnInit(): void {
+    
     this.clientService.read().subscribe(client => {
       this.client = client
     })

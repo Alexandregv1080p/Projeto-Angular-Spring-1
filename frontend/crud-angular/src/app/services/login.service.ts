@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  private readonly API = 'api/authenticate'; // Endpoint de autenticação no backend
+  private readonly API = 'api/v1/auth/authenticate'; // Endpoint de autenticação no backend
 
   constructor(private httpClient: HttpClient) { }
 

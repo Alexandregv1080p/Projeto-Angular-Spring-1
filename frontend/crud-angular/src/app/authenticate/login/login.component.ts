@@ -11,6 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginComponent {
   hide = true; 
   loginForm: FormGroup;
+  sessionId: any = ''
   email = new FormControl('', [Validators.required, Validators.email]);
 
   getErrorMessage() {
@@ -34,8 +35,16 @@ export class LoginComponent {
 
       this.authService.login(email, password).subscribe(
         response => {
-          console.log('Token:', response.token);
-          this.router.navigate(['/home'])
+          if(response){
+            this.sessionId = response.sessionId
+            sessionStorage.setItem(
+              'token',
+              this.sessionId
+            )
+            console.log(this.loginForm.value)
+            this.router.navigate(['/home'])
+          }
+          
         },
         error => {
           console.error('Erro de autenticação:', error);

@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { RegisterComponent } from './authenticate/register/register.component';
+import { DashboardRoutingModule } from './components/dashboard-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -32,7 +34,9 @@ import { RegisterComponent } from './authenticate/register/register.component';
     MatInputModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    MatSnackBarModule
     
   ],
   providers: [],

@@ -1,6 +1,7 @@
 .card-container {
   background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
   height: 100vh;
+  background-size: cover;
   
 }
 .example-form {
@@ -35,4 +36,11 @@ p,h1{
 a{
   font-weight: bold;
   cursor: pointer;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

@@ -13,8 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { RegisterComponent } from './authenticate/register/register.component';
-import { DashboardRoutingModule } from './components/dashboard-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { RequestInterceptor } from './request.interceptor';
 
 
 
@@ -39,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatSnackBarModule
     
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS, useClass: RequestInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

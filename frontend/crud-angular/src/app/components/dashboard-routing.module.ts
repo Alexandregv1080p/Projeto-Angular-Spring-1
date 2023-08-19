@@ -8,11 +8,13 @@ import { UpdClientComponent } from './clients/upd-client/upd-client.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactComponent } from './contact/contact.component';
+import { AuthenticationGuard } from '../authentication.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
+    canActivate:[AuthenticationGuard],
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },

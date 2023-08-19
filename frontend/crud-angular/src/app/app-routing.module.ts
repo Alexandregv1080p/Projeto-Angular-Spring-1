@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './authenticate/login/login.component';
 import { RegisterComponent } from './authenticate/register/register.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path:'',
+    path:'',canActivate:[AuthenticationGuard],
     loadChildren:() => import('./components/dashboard.module').then((m) => m.DashboardModule)
   }
 ];

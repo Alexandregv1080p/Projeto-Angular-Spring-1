@@ -21,7 +21,7 @@ public class BackendApplication extends SpringBootServletInitializer {
 			clientRepository.deleteAll();
 
 			Client c = new Client();
-			c.setImage("g.png");
+			c.setImage("g.png"); 
 			c.setName("Alexandre");
 			c.setLastName("Gomes");
 			c.setEmail("alex@mail.com");

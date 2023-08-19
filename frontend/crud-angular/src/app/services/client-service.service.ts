@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ClientServiceService {
 
-  private readonly API = 'api/clients'
+  private readonly API = 'http://localhost:8080/api/clients'
   clients: Client[] = [];
   numberOfIds: number = 0;
   constructor(

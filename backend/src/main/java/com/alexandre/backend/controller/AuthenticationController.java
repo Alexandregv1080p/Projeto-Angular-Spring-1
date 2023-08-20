@@ -35,7 +35,6 @@ public class AuthenticationController {
     ){
         return ResponseEntity.ok(authenticateService.authenticate(request));
     }
-    @GetMapping("/list")
-    public List<String> getListItems() {return List.of("1","2","3");}
+    
     
 }

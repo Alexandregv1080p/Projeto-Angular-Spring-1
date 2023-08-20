@@ -31,27 +31,28 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const email = this.loginForm.value.email;
-      const password = this.loginForm.value.password;
-      console.log(this.loginForm.value);
+      const password = this.loginForm.value.password;      
       this.authService.login(email, password).subscribe(
         response => {
-          if (response) {
-            this.sessionId = response.sessionId;
-            sessionStorage.setItem('token', this.sessionId);
-            console.log(this.loginForm.value);
+          if (response && response.token) {
+            const token = response.token; 
+            sessionStorage.setItem('token', token);
             this.router.navigate(['/home']);
+            
+            this.authService.getAuthenticatedResource().subscribe(
+              data => {
+                console.log('Authenticated Data:', data);
+              },
+              error => {
+                console.error('Error fetching authenticated resource:', error);
+              }
+            );
+          } else {
+            this.authService.showMensage("Email ou senha incorretos!");
           }
-          this.authService.getAuthenticatedResource().subscribe(
-            data => {
-              console.log('Authenticated Data:', data);
-            },
-            error => {
-              console.error('Error fetching authenticated resource:', error);
-            }
-          );
         },
         error => {
-          this.authService.showMensage("Email ou senha incorretos!");
+          this.authService.showMensage("Erro de autenticação!");
         }
       );
     }

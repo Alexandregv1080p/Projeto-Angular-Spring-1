@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthenticationGuard } from '../authentication.guard';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: 'clientes/update-client/:id', component: UpdClientComponent },
       { path: 'clientes/delete-client/:id', component: DelClientComponent },
       { path: 'about', component: AboutComponent },
+      {path:'perfil', component:PerfilComponent}
     ]
   }
 ];

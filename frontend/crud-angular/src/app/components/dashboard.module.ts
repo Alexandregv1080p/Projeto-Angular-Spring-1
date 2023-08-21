@@ -34,6 +34,7 @@ import { ChartPieComponent } from '../widgets/chart-pie/chart-pie.component';
 import { ChartsComponent } from '../widgets/charts/charts.component';
 import { GraphComponent } from '../widgets/graph/graph.component';
 import { TableComponent } from '../widgets/table/table.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -51,7 +52,8 @@ import { TableComponent } from '../widgets/table/table.component';
     DelClientComponent,
     UpdClientComponent,
     ChartPieComponent,
-    DashboardComponent
+    DashboardComponent,
+    PerfilComponent
   ],
   imports: [
     

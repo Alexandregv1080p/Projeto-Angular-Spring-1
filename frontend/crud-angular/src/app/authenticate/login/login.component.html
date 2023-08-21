@@ -6,13 +6,13 @@
       <p>O registro e login são feitos pelo Spring Security</p>
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form">
         <mat-form-field class="example-full-width">
-          <mat-label>Enter your email</mat-label>
+          <mat-label>Entre como seu email</mat-label>
           <input matInput placeholder="pat@example.com" formControlName="email" >
           <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
         </mat-form-field>
       
         <mat-form-field class="example-full-width">
-          <mat-label>Enter your password</mat-label>
+          <mat-label>Digite sua senha</mat-label>
           <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"  [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

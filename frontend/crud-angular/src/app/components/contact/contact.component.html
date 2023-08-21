@@ -7,7 +7,7 @@
           <tr>
             <td>
               <mat-form-field class="example-full-width">
-                <mat-label>First name</mat-label>
+                <mat-label>Digite seu nome</mat-label>
                 <input type="text" name="name" matInput [(ngModel)]="emailData.name" [errorStateMatcher]="matcher">
                 <mat-error *ngIf="nameFormControl.hasError('name') && !nameFormControl.hasError('required')">
                   Please enter a valid name
@@ -20,7 +20,7 @@
           </tr>
         </table>
         <mat-form-field class="example-full-width">
-          <mat-label>Email</mat-label>
+          <mat-label>Email de contato</mat-label>
           <input type="email" matInput name="email" [(ngModel)]="emailData.email" [formControl]="emailFormControl"
             [errorStateMatcher]="matcher" placeholder="Ex. pat@example.com">
           <mat-hint>Errors appear instantly!</mat-hint>
@@ -32,8 +32,7 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <mat-label>Telephone</mat-label>
-          <span matPrefix>+1 &nbsp;</span>
+          <mat-label>Telefone para contato</mat-label>
           <input type="text" name="telephone" matInput [(ngModel)]="emailData.telephone" placeholder="555-555-1234">
           <mat-icon matSuffix>mode_edit</mat-icon>
         </mat-form-field>
@@ -45,7 +44,7 @@
         </mat-form-field>
         <p>
           <mat-form-field class="example-full-width" type="text" name="Description" style="background-color: white;">
-            <mat-label>Descrition</mat-label>
+            <mat-label>Descrição</mat-label>
             <textarea matInput type="text" name="description" [(ngModel)]="emailData.description"
               placeholder="Type some text"></textarea>
           </mat-form-field>

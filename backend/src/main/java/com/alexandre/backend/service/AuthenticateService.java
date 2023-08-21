@@ -1,5 +1,7 @@
 package com.alexandre.backend.service;
 
+import java.util.Optional;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -9,6 +11,7 @@ import com.alexandre.backend.model.AuthenticationRequest;
 import com.alexandre.backend.model.AuthenticationResponse;
 import com.alexandre.backend.model.RegisterRequest;
 import com.alexandre.backend.model.Role;
+import com.alexandre.backend.model.UpdateProfileRequest;
 import com.alexandre.backend.model.User;
 import com.alexandre.backend.repository.UserRepository;
 
@@ -52,5 +55,22 @@ public class AuthenticateService {
             .token(jwtToken)
             .build();
     }
+    
+    public void updateProfile(UpdateProfileRequest request, String userEmail) {
+        Optional<User> optionalUser = repository.findByEmail(userEmail);
+
+        try {
+            if (optionalUser.isPresent()) {
+                User user = optionalUser.get();
+                user.setFirstname(request.getFisrtname());
+                user.setLastname(request.getLastname());
+                user.setEmail(request.getEmail());
+                repository.save(user);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     
 }

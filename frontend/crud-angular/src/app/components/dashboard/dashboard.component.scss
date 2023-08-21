@@ -21,10 +21,17 @@ mat-icon {
   z-index: 998;
   position: fixed
 }
+mat-nav-list a{
+  transition: all 0.4s ease;
+}
+mat-nav-list a:hover{
+  background-color: #ef233c;
+}
 mat-nav-list a mat-icon{
   padding-top:5px;
-  padding-right: 15px;
+  margin-right: 15px;
 }
+
 mat-nav-list{
   text-align: left;
 }

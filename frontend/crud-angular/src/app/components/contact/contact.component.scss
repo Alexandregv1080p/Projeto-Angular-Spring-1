@@ -1,6 +1,23 @@
 *{
   color: black;
 }
+.card-central{
+  width: 1050px;
+  height: 650px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  border-radius: 30px;
+}
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
 button{
   width: 102px;
   margin: 14px;

@@ -36,6 +36,7 @@ export class RegisterComponent {
       const email = this.registerForm.value.email;
       const password = this.registerForm.value.password;      
       this.registerService.register(firstname,lastname,email, password).subscribe(() =>this.router.navigate(['/login']));
+      this.registerService.showMensage("Usuário registrado com sucesso!")
     }
   }
 }

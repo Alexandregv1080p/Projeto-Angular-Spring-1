@@ -1,4 +1,4 @@
-<mat-toolbar fixedInViewport="true" style="background-color: #27374D;">
+<mat-toolbar fixedInViewport="true" style="background-color: #2b2d42;">
     <mat-icon 
    [@rotatedState]="iconState" 
     (click)="toggleIcon()" >menu</mat-icon>
@@ -8,23 +8,23 @@
     <mat-icon>share</mat-icon>
 </mat-toolbar>
 <mat-sidenav-container >
-    <mat-sidenav style="background-color: #526D82;" [(opened)]="opened" mode="side" fixedInViewport="true" fixedTopGap="64">
+    <mat-sidenav style="background-color: #8d99ae;" [(opened)]="opened" mode="side" fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list >
             <a routerLink="/home" mat-list-item >
                 <mat-icon>assessment</mat-icon> 
-                Home
+                Inicio
             </a>
             <a routerLink="/clientes" mat-list-item >
                 <mat-icon>assignment_ind</mat-icon>
-                Workers
+                Clientes
             </a>
             <a routerLink="/contact" mat-list-item >
                 <mat-icon>perm_phone_msg</mat-icon>
-                Contact
+                Contato
             </a>
             <a routerLink="/about" mat-list-item >
                 <mat-icon>zoom_in</mat-icon>
-                About
+                Sobre
             </a>
         </mat-nav-list>
     </mat-sidenav>

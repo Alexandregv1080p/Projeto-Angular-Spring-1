@@ -2,13 +2,6 @@
 <mat-card style="padding: 20px; background-color: #f4f6f7;">
   <mat-card-content>Cadastre o usuario</mat-card-content>
   <form class="example-form" [formGroup]="form">
-
-    <div class="mb-3">
-      <label for="formFile" class="form-label">Default file input example</label>
-      <input class="form-control" type="file" id="formFile" (change)="onImageSelected($event)" formControlName="image">
-    </div>
-
-    
         <mat-form-field class="example-full-width">
             <mat-label>First name</mat-label>
             <input matInput formControlName="name">

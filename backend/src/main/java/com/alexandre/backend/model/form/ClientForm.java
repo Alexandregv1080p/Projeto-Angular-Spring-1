@@ -1,6 +1,8 @@
 package com.alexandre.backend.model.form;
 
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +10,7 @@ import lombok.Setter;
 @Setter
 public class ClientForm {
 
+    private MultipartFile imageFile;
     private String image;
     private String name;
     private String lastName;

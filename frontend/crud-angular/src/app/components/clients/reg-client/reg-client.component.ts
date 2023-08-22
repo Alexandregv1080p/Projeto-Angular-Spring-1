@@ -32,7 +32,6 @@ interface Level {
   styleUrls: ['./reg-client.component.scss',]
 })
 export class RegClientComponent {
-  selectedImage: File | null = null;
   form: FormGroup
   constructor(private clientService: ClientServiceService,
     private router: Router,
@@ -75,8 +74,5 @@ export class RegClientComponent {
       })
       
   }
-  onImageSelected(event: any): void {
-    this.selectedImage = event.target.files[0];
-    this.form.patchValue({ image: this.selectedImage });
-  }
+ 
 }

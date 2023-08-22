@@ -1,5 +1,7 @@
 package com.alexandre.backend.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
@@ -44,5 +46,6 @@ public class Client {
     private String position;
     @Column(name="dataNasc")
     private String dataNasc;
+    
 
 }

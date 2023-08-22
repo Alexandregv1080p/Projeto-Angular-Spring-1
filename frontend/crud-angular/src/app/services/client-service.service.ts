@@ -10,7 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ClientServiceService {
 
-  private readonly API = 'api/clients'
+  private readonly API = 'http://localhost:8080/api/clients'
   clients: Client[] = [];
   numberOfIds: number = 0;
   constructor(
@@ -43,7 +43,7 @@ export class ClientServiceService {
     return this.httpClient.get<Client>(url);
   }
   
-  save(record: Client){
+  save(record: Client){ 
     return this.httpClient.post<Client>(this.API,record)
       .pipe(first())
   }

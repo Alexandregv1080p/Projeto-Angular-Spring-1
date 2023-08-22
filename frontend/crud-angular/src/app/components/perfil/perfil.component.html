@@ -1,7 +1,29 @@
-<!-- user-profile.component.html -->
-<div *ngIf="userProfile">
-    <h2>User Profile</h2>
-    <p><strong>Email:</strong> {{ userProfile.email }}</p>
-    <p><strong>Name:</strong> {{ userProfile.firstname }} {{ userProfile.lastname }}</p>
-    <!-- Display other profile details here -->
-</div>
+<div class="card-container">
+    <div class="card-wrapper">
+      <mat-card *ngIf="userProfile" class="card-central" style="margin-top: 20px; padding: 20px; background-color: white;">
+        <h1>Duvida? Entre em contato com nós!</h1>
+        <form class="example-form">
+          <table class="example-full-width" cellspacing="0" style="background-color: white;">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Primeiro nome</mat-label>
+                  <input type="text" name="name" matInput [(ngModel)]="userProfile.firstname" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Ultimo nome</mat-label>
+                    <input type="text" name="lastname" matInput [(ngModel)]="userProfile.lastname" >
+                  </mat-form-field>
+              </td>
+            </tr>
+          </table>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput name="email" [(ngModel)]="userProfile.email" 
+             placeholder="Ex. pat@example.com">
+          </mat-form-field>
+        </form>
+  
+      </mat-card>
+    </div>
+  </div>

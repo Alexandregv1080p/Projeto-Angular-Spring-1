@@ -31,7 +31,7 @@ public class AuthenticateService {
 
     public AuthenticationResponse register(RegisterRequest request) {
         var user = User.builder()
-                        .firstname(request.getFisrtname())
+                        .firstname(request.getFirstname())
                         .lastname(request.getLastname())
                         .email(request.getEmail())
                         .password(passwordEncoder.encode(request.getPassword()))
@@ -62,7 +62,7 @@ public class AuthenticateService {
         try {
             if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
-                user.setFirstname(request.getFisrtname());
+                user.setFirstname(request.getFirstname());
                 user.setLastname(request.getLastname());
                 user.setEmail(request.getEmail());
                 repository.save(user);

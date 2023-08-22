@@ -19,14 +19,6 @@ export class HomeComponent implements OnInit {
     this.clientService.list().subscribe(clients => {
       this.clientService.numberOfIds = clients.length;
     });
-    this.http.get<any>("http://localhost:8080/api/v1/auth/list")
-      .subscribe(res => {
-        if(res){
-          console.log("List ", res)
-        }else {
-          alert('failed do query list')
-        }
-      })
   }
   
 }

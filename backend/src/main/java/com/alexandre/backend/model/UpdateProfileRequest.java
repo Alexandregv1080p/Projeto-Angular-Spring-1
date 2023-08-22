@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateProfileRequest {
-    private String fisrtname;
+    private String firstname;
     private String lastname;
     private String email;
 }

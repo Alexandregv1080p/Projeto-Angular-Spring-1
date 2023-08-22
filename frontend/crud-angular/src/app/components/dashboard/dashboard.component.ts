@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { PerfilService } from 'src/app/services/perfil.service';
+import { UserDetails } from 'src/app/model/UserDetails';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,14 +16,33 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])
   ] 
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   
+  userProfile: UserDetails | any
+
+
   opened=false;
   iconState = 'default';
+
+  constructor(private perfilService: PerfilService){}
 
   toggleIcon() {
     this.opened = !this.opened;
     this.iconState = this.opened ? 'rotated' : 'default';
 
+  }
+  ngOnInit(): void {
+    this.loadUserProfile();
+}
+
+  loadUserProfile(): void {
+    this.perfilService.getUserProfile().subscribe(
+      (userProfile) => {
+        this.userProfile = userProfile;
+      },
+      (error) => {
+        console.error('Error loading user profile:', error);
+      }
+    );
   }
 }

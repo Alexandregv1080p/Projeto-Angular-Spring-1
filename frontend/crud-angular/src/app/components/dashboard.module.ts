@@ -35,6 +35,7 @@ import { ChartsComponent } from '../widgets/charts/charts.component';
 import { GraphComponent } from '../widgets/graph/graph.component';
 import { TableComponent } from '../widgets/table/table.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 
 
@@ -53,7 +54,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     UpdClientComponent,
     ChartPieComponent,
     DashboardComponent,
-    PerfilComponent
+    PerfilComponent,
+    TasksComponent
   ],
   imports: [
     

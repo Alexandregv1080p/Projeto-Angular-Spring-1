@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from 'express';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Task } from 'src/app/model/Task';
-import { TasksService } from 'src/app/services/tasks.service';
+import { TasksService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-table-task',

@@ -16,6 +16,7 @@ import { RegisterComponent } from './authenticate/register/register.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RequestInterceptor } from './request.interceptor';
 import { TableTaskComponent } from './widgets/table-task/table-task.component';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -38,7 +39,8 @@ import { TableTaskComponent } from './widgets/table-task/table-task.component';
     MatIconModule,
     MatButtonModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule 
     
   ],
   providers: [{provide:HTTP_INTERCEPTORS, useClass: RequestInterceptor,multi:true}],

@@ -33,7 +33,7 @@ import { CanvadonutchartComponent } from '../widgets/canvadonutchart/canvadonutc
 import { ChartPieComponent } from '../widgets/chart-pie/chart-pie.component';
 import { ChartsComponent } from '../widgets/charts/charts.component';
 import { GraphComponent } from '../widgets/graph/graph.component';
-import { TableComponent } from '../widgets/table/table.component';
+import { TableComponent } from '../widgets/table-client/table.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { TasksComponent } from './tasks/tasks.component';
 

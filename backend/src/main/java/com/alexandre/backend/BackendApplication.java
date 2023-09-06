@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 
 import com.alexandre.backend.model.Client;
 import com.alexandre.backend.repository.ClientRepository;
+import com.alexandre.backend.repository.TaskRepository;
 
 @SpringBootApplication
 public class BackendApplication extends SpringBootServletInitializer {
@@ -16,10 +17,11 @@ public class BackendApplication extends SpringBootServletInitializer {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 	@Bean
-	CommandLineRunner initDatabase(ClientRepository clientRepository){
+	CommandLineRunner initDatabase(ClientRepository clientRepository, TaskRepository taskRepository){
 		return arg ->{
+			taskRepository.deleteAll();
 			clientRepository.deleteAll();
-
+		
 			Client c = new Client();
 			c.setImage("g.png"); 
 			c.setName("Alexandre");

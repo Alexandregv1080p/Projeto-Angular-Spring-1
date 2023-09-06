@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { RegisterComponent } from './authenticate/register/register.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RequestInterceptor } from './request.interceptor';
+import { TableTaskComponent } from './widgets/table-task/table-task.component';
 
 
 
@@ -22,7 +23,8 @@ import { RequestInterceptor } from './request.interceptor';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TableTaskComponent
   ],
   imports: [
     BrowserModule,

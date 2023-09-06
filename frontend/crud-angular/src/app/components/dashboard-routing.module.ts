@@ -1,3 +1,4 @@
+import { TasksComponent } from './tasks/tasks.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
       { path: 'clientes/update-client/:id', component: UpdClientComponent },
       { path: 'clientes/delete-client/:id', component: DelClientComponent },
       { path: 'about', component: AboutComponent },
-      {path:'perfil', component:PerfilComponent}
+      { path:'perfil', component:PerfilComponent},
+      { path:'tasks', component: TasksComponent}
     ]
   }
 ];

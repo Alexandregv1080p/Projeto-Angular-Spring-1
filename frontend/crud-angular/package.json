@@ -33,13 +33,7 @@
     "ng2-charts": "^4.1.1",
     "path": "^0.12.7",
     "rxjs": "~7.8.0",
-<<<<<<< Updated upstream
     "tslib": "^2.6.2",
-=======
-    "stream": "^0.0.2",
-    "tslib": "^2.3.0",
-    "util": "^0.12.5",
->>>>>>> Stashed changes
     "zone.js": "~0.13.0"
   },
   "devDependencies": {

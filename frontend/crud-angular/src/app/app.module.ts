@@ -24,7 +24,8 @@ import { TableTaskComponent } from './widgets/table-task/table-task.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    TableTaskComponent
+    TableTaskComponent,
+    
   ],
   imports: [
     BrowserModule,

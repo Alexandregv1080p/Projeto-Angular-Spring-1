@@ -37,6 +37,9 @@ import { TableComponent } from '../widgets/table-client/table.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TableTaskComponent } from '../widgets/table-task/table-task.component';
+import { RegTaskComponent } from './tasks/reg-task/reg-task.component';
+import { DelTaskComponent } from './tasks/del-task/del-task.component';
+import { UpdTaskComponent } from './tasks/upd-task/upd-task.component';
 
 
 
@@ -57,7 +60,10 @@ import { TableTaskComponent } from '../widgets/table-task/table-task.component';
     DashboardComponent,
     PerfilComponent,
     TasksComponent,
-    TableTaskComponent
+    TableTaskComponent,
+    RegTaskComponent,
+    DelTaskComponent,
+    UpdTaskComponent
   ],
   imports: [
     

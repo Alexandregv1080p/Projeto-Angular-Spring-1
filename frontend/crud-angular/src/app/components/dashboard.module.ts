@@ -36,6 +36,7 @@ import { GraphComponent } from '../widgets/graph/graph.component';
 import { TableComponent } from '../widgets/table-client/table.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { TableTaskComponent } from '../widgets/table-task/table-task.component';
 
 
 
@@ -55,7 +56,8 @@ import { TasksComponent } from './tasks/tasks.component';
     ChartPieComponent,
     DashboardComponent,
     PerfilComponent,
-    TasksComponent
+    TasksComponent,
+    TableTaskComponent
   ],
   imports: [
     

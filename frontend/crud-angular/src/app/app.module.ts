@@ -24,8 +24,7 @@ import { MatTableModule } from '@angular/material/table';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
-    TableTaskComponent,
+    RegisterComponent
     
   ],
   imports: [

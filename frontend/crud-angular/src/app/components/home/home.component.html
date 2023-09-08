@@ -22,7 +22,7 @@
         <mat-card-title *ngIf="clientService.numberOfIds > 0">{{clientService.numberOfIds }}</mat-card-title>
         <mat-card-subtitle>Usuarios cadastrados</mat-card-subtitle>
       </mat-card-header>
-      <mat-card-content style="background-color: #03C988;;">
+      <mat-card-content>
         <p>
           The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan
         </p>
@@ -42,13 +42,13 @@
     </mat-card>
     <mat-card class="example-card hight-cards">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"><mat-icon>file_download</mat-icon></div>
-        <mat-card-title>100</mat-card-title>
-        <mat-card-subtitle>Dowloads</mat-card-subtitle>
+        <div mat-card-avatar class="example-header-image"><mat-icon>assignment</mat-icon></div>
+        <mat-card-title *ngIf="taskService.numberOfIds > 0">{{taskService.numberOfIds }}</mat-card-title>
+        <mat-card-subtitle>Tarefas ativas</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content >
         <p>
-            Estes são dados ficticios
+            Número de tarefas ativas
         </p>
       </mat-card-content>
     </mat-card>

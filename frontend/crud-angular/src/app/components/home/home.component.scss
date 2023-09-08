@@ -30,6 +30,12 @@ body {
   gap: 20px;
 }
 
+::ng-deep .hight-cards[_ngcontent-ng-c2211520596] mat-card-content[_ngcontent-ng-c2211520596] {
+  padding: 10px;
+  width: 100%;
+  height: 55px;
+  border-radius: 0 0 7px 7px;
+}
 .card {
   background-color: #fff;
   padding: 20px;

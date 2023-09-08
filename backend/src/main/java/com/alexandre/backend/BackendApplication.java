@@ -1,5 +1,8 @@
 package com.alexandre.backend;
 
+import java.text.DateFormat;
+import java.time.LocalDateTime;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,6 +10,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.Bean;
 
 import com.alexandre.backend.model.Client;
+import com.alexandre.backend.model.Task;
 import com.alexandre.backend.repository.ClientRepository;
 import com.alexandre.backend.repository.TaskRepository;
 
@@ -31,8 +35,14 @@ public class BackendApplication extends SpringBootServletInitializer {
 			c.setPosition( "Junior");
 			c.setTitle("Software Developer");
 			c.setDataNasc("1999-10-30");
-
 			clientRepository.save(c);
+
+			Task t = new Task();
+			t.setCliente(c);
+			t.setDataInserida(LocalDateTime.now());
+			t.setNomeTarefa("Migrar banco de dados");
+			t.setStatus(true);
+			taskRepository.save(t);
 		};
 	}
 }

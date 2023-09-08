@@ -1,3 +1,4 @@
+import { UpdTaskComponent } from './tasks/upd-task/upd-task.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -11,6 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthenticationGuard } from '../authentication.guard';
 import { PerfilComponent } from './perfil/perfil.component';
+import { RegTaskComponent } from './tasks/reg-task/reg-task.component';
+import { DelTaskComponent } from './tasks/del-task/del-task.component';
 
 const routes: Routes = [
   {
@@ -27,7 +30,10 @@ const routes: Routes = [
       { path: 'clientes/delete-client/:id', component: DelClientComponent },
       { path: 'about', component: AboutComponent },
       { path:'perfil', component:PerfilComponent},
-      { path:'tasks', component: TasksComponent}
+      { path:'tasks', component: TasksComponent},
+      { path:'tasks/register', component:RegTaskComponent},
+      { path:'tasks/update-task/:id', component:UpdTaskComponent},
+      { path:'tasks/delete-task/:id', component:DelTaskComponent}
     ]
   }
 ];

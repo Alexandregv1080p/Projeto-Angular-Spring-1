@@ -56,7 +56,7 @@ public class SecurityConfiguration extends SecurityConfigurerAdapter<DefaultSecu
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/api/v1/auth/**", configuration);
         source.registerCorsConfiguration("/api/clients/**", configuration);
-        source.registerCorsConfiguration("/api/clients/register", configuration);
+        source.registerCorsConfiguration("/api/tasks", configuration);
 
         return source;
     }

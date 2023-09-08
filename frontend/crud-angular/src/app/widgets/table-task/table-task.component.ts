@@ -17,7 +17,7 @@ export class TableTaskComponent implements OnInit {
     this.tasks = this.taskService.list();
   }
 
-  displayedColumns = ['id','cliente','nomeTarefa','status','actions']
+  displayedColumns:string[] = ['id','cliente','nomeTarefa','status','actions']
 
   ngOnInit(): void {
       this.taskService.read().subscribe(task =>{

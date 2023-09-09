@@ -17,6 +17,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RequestInterceptor } from './request.interceptor';
 import { TableTaskComponent } from './widgets/table-task/table-task.component';
 import { MatTableModule } from '@angular/material/table';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ChartPie2Component } from './widgets/chart-pie2/chart-pie2.component';
 
 
 
@@ -24,7 +26,8 @@ import { MatTableModule } from '@angular/material/table';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ChartPie2Component
     
   ],
   imports: [
@@ -40,7 +43,8 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatTableModule 
+    MatTableModule,
+    NgxChartsModule
     
   ],
   providers: [{provide:HTTP_INTERCEPTORS, useClass: RequestInterceptor,multi:true}],

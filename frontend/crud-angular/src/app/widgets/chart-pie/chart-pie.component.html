@@ -1,4 +1,12 @@
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<div id="container"></div>
+<ngx-charts-pie-chart
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="single"
+  [gradient]="gradient"
+  [labels]="showLabels"
+  [doughnut]="isDoughnut"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-pie-chart>

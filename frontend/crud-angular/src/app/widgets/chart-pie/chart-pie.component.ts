@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import * as Highcharts from 'highcharts';
-import { HighchartsChartModule } from 'highcharts-angular';
-
+import { Color, LegendPosition, ScaleType } from '@swimlane/ngx-charts'; // Importe os tipos Color e LegendPosition
+import { single } from './single';
 
 @Component({
   selector: 'app-chart-pie',
@@ -9,65 +8,34 @@ import { HighchartsChartModule } from 'highcharts-angular';
   styleUrls: ['./chart-pie.component.scss']
 })
 export class ChartPieComponent {
-  Highcharts: typeof Highcharts = Highcharts;
-  updateFlag = false;
+  single: any[] = [];
+  view: [number, number] = [700, 400];
 
-  data = [1, 2, 3, 4];
+  // options
+  gradient: boolean = true;
+  showLegend: boolean = true;
+  showLabels: boolean = true;
+  isDoughnut: boolean = false;
 
-  chartOptions: Highcharts.Options = {
-    colors: ['#01BAF2', '#f6fa4b', '#FAA74B', '#baf201', '#f201ba'],
-    chart: {
-      type: 'pie'
-    },
-    title: {
-      text: 'Egg Yolk Composition'
-    },
-    tooltip: {
-      valueSuffix: '%'
-    },
-    subtitle: {
-      text: 'Source: <a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_blank">MDPI</a>' // Corrija o target
-    },
-    plotOptions: {
-      pie: {
-        allowPointSelect: true,
-        cursor: 'pointer',
-        dataLabels: {
-          enabled: true,
-          format: '{point.name}: {point.percentage:.1f}%'
-        },
-        showInLegend: true
-      }
-    },
-    series: [
-      {
-        type: 'pie', // Adicione o tipo de gráfico aqui
-        name: 'Percentage',
-        data: [
-          {
-            name: 'Water',
-            y: 55.02
-          },
-          {
-            name: 'Fat',
-            sliced: true,
-            selected: true,
-            y: 26.71
-          },
-          {
-            name: 'Carbohydrates',
-            y: 1.09
-          },
-          {
-            name: 'Protein',
-            y: 15.5
-          },
-          {
-            name: 'Ash',
-            y: 1.68
-          }
-        ]
-      }
-    ]
+  colorScheme: Color = {
+    name: 'custom-color-scheme',
+    selectable: true,
+    group: ScaleType.Ordinal, 
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
+  constructor() {
+    Object.assign(this, { single });
+  }
+
+  onSelect(data: any): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  }
+
+  onActivate(data: any): void {
+    console.log('Activate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onDeactivate(data: any): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  }
 }

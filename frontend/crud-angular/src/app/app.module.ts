@@ -26,8 +26,8 @@ import { ChartPie2Component } from './widgets/chart-pie2/chart-pie2.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
-    ChartPie2Component
+    RegisterComponent
+    
     
   ],
   imports: [

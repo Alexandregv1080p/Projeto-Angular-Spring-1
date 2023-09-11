@@ -40,6 +40,7 @@ import { TableTaskComponent } from '../widgets/table-task/table-task.component';
 import { RegTaskComponent } from './tasks/reg-task/reg-task.component';
 import { DelTaskComponent } from './tasks/del-task/del-task.component';
 import { UpdTaskComponent } from './tasks/upd-task/upd-task.component';
+import { ChartPie2Component } from '../widgets/chart-pie2/chart-pie2.component';
 
 
 
@@ -63,7 +64,8 @@ import { UpdTaskComponent } from './tasks/upd-task/upd-task.component';
     TableTaskComponent,
     RegTaskComponent,
     DelTaskComponent,
-    UpdTaskComponent
+    UpdTaskComponent,
+    ChartPie2Component
   ],
   imports: [
     

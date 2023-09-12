@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from 'src/app/model/Client';
 import { Task } from 'src/app/model/Task';
 import { ClientServiceService } from 'src/app/services/client-service.service';
@@ -18,6 +19,7 @@ export class DelTaskComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router:Router,
     private taskService: TasksService,
     private formBuilder: FormBuilder,
     private clientService:ClientServiceService

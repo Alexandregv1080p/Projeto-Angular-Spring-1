@@ -18,7 +18,7 @@ export class DelTaskComponent implements OnInit {
   clientes!:Client[]
 
   constructor(
-    private route: ActivatedRoute,
+    private route:ActivatedRoute ,
     private router:Router,
     private taskService: TasksService,
     private formBuilder: FormBuilder,

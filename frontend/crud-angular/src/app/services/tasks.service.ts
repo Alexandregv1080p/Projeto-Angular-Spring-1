@@ -24,6 +24,7 @@ export class TasksService {
     }
     create(task:Task):Observable<Task>{
       return this.http.post<Task>(this.API,task)
+      .pipe(first())
     }
     read():Observable<any[]>{
       return this.http.get<Task[]>(this.API)

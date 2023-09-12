@@ -8,7 +8,7 @@ import {
   FormGroup,
 } from '@angular/forms';
 
-import {ErrorStateMatcher} from '@angular/material/core';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { first } from 'rxjs';
 import { ClientServiceService } from 'src/app/services/client-service.service';
@@ -35,44 +35,46 @@ export class RegClientComponent {
   form: FormGroup
   constructor(private clientService: ClientServiceService,
     private router: Router,
-    private formBuilder: FormBuilder){
+    private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
-      image:[null],
-      name:[null],
-      email:[null],
-      lastName:[null],
-      title:[null],
-      position:[null],
-      status:[null],
-      dataNasc:[null]
-    })
+      name: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      title: ['', Validators.required],
+      status: ['', Validators.required],
+      position: ['', Validators.required],
+      dataNasc: ['', Validators.required],
+    });
   }
-  
+
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   matcher = new MyErrorStateMatcher();
 
   status: Status[] = [
-    {viewValue: 'Active'},
-    {viewValue: 'Offline'},
-    {viewValue: 'Onboarding'},
+    { viewValue: 'Active' },
+    { viewValue: 'Offline' },
+    { viewValue: 'Onboarding' },
   ];
   levels: Level[] = [
-    {viewValue:'Junior'},
-    {viewValue:'Pleno'},
-    {viewValue:'Senior'}
+    { viewValue: 'Junior' },
+    { viewValue: 'Pleno' },
+    { viewValue: 'Senior' }
   ]
 
-  onCancel():void{
+  onCancel(): void {
     this.router.navigate(["clientes"])
   }
-  onSubmit(){
-    this.clientService.save(this.form.value)
-      .subscribe(() => {
-        this.clientService.showMensage("Cliente cadastrado com sucesso!")
-        this.router.navigate(["clientes"])
-      })
-      
+  onSubmit() {
+    if (this.form.valid) {
+      this.clientService.save(this.form.value)
+        .subscribe(() => {
+          this.clientService.showMensage("Cliente cadastrado com sucesso!")
+          this.router.navigate(["clientes"])
+        })
+    }else{
+      this.clientService.showMensage("Por favor, prencha os campos corretamente!")
+    }
   }
- 
+
 }

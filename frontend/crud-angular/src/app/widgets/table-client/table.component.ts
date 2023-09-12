@@ -14,7 +14,7 @@ export class TableComponent implements OnInit{
   clients: Observable<Client[]>
   client!: Client[];
 
-  displayedColumns: string[] = [ 'image', 'name', 'lastName','email','title','position','status','dataNasc','action']; 
+  displayedColumns: string[] = [ 'id', 'name', 'lastName','email','title','position','status','dataNasc','action']; 
 
   constructor(private router:Router,private clientService: ClientServiceService){
     this.clients = this.clientService.list()

@@ -51,6 +51,10 @@ export class ChartPieComponent implements OnInit {
       {
         "name":"Total de Tarefas",
         "value":this.numberOfTaskIds
+      },
+      {
+        "name":"Total de Downloads",
+        "value":10
       }
     ];
   }

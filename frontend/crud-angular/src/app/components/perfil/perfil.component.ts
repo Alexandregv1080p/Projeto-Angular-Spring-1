@@ -8,6 +8,7 @@ import { PerfilService } from 'src/app/services/perfil.service';
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent implements OnInit {
+  isFormEditable: boolean = false;
 
   userProfile: UserDetails | any
 
@@ -26,5 +27,14 @@ export class PerfilComponent implements OnInit {
         console.error('Error loading user profile:', error);
       }
     );
+  }
+  toggleEditState() {
+    this.isFormEditable = !this.isFormEditable;
+  }
+  updProfile(){
+    this.perfilService.updateProfile(this.userProfile).subscribe(()=>{
+      this.perfilService.showMensage("Usuario atualizado com sucesso!")
+      this.isFormEditable = false;
+    });
   }
 }

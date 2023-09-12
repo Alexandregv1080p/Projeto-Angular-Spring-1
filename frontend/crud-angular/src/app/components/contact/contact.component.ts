@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import {
   FormControl,
   FormGroupDirective,
   NgForm,
   Validators
 } from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { ErrorStateMatcher } from '@angular/material/core';
 import { EmailserviceService } from 'src/app/services/emailservice.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -22,7 +22,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class ContactComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   nameFormControl = new FormControl('', [Validators.required, Validators.min(3)]);
-  lastNameFormControl = new FormControl('', [Validators.required,Validators.min(3)]);
+  lastNameFormControl = new FormControl('', [Validators.required, Validators.min(3)]);
   matcher = new MyErrorStateMatcher();
 
   emailData: any = {
@@ -33,27 +33,18 @@ export class ContactComponent {
     subject: ''
   };
 
-  constructor(private emailService: EmailserviceService) {}
+  constructor(private emailService: EmailserviceService) { }
 
   sendEmail() {
     const remetenteEmail = this.emailData.email;
     const emailData = {
       ...this.emailData,
-      from: remetenteEmail 
+      from: remetenteEmail
     };
-  this.emailService.sendEmail(emailData)
-    .subscribe(
-      response => {
-        console.log('Server response:', response);
-        if (response === 'Email sent successfully') {
-          console.log('Email sent successfully');
-          this.clearForm();
-        }
-      },
-      error => {
-        console.error('Error sending email:', error);
-      }
-    );
+    this.emailService.sendEmail(emailData)
+    this.emailService.showMensage("Email enviado com sucesso!")
+    this.clearForm();
+
   }
 
   clearForm() {

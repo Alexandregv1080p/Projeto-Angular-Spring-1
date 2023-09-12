@@ -41,6 +41,7 @@ import { RegTaskComponent } from './tasks/reg-task/reg-task.component';
 import { DelTaskComponent } from './tasks/del-task/del-task.component';
 import { UpdTaskComponent } from './tasks/upd-task/upd-task.component';
 import { ChartPie2Component } from '../widgets/chart-pie2/chart-pie2.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -91,7 +92,7 @@ import { ChartPie2Component } from '../widgets/chart-pie2/chart-pie2.component';
     MatTableModule,
     MatDialogModule,
     MatSnackBarModule,
-    
+    MatMenuModule
   ]
 })
 export class DashboardModule { }

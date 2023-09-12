@@ -39,4 +39,11 @@ export class TasksService {
         })
       )
     }
-}
+    delete(id:string):Observable<Task>{
+      return this.http.delete<Task>(`${this.API}/${id}`)
+    }
+    getTaskById(id:string):Observable<Task>{
+      let url = `${this.API}/${id}`
+      return this.http.get<Task>(url)
+    }
+  }

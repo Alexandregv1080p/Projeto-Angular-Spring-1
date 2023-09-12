@@ -1,26 +1,19 @@
-<h1>Cadastrar clientes</h1>
+<h1>Atualizar cliente</h1>
 <mat-card style="padding: 20px; background-color: #f4f6f7;">
-  <mat-card-content>Cadastre o usuario</mat-card-content>
+  <mat-card-content>Atualizar o cliente</mat-card-content>
   <form class="example-form">
-
-    <div class="mb-3">
-      <label for="formFile" class="form-label">Default file input example</label>
-      <input class="form-control" type="file" id="formFile" name="image" [(ngModel)]="cliente.image">
-    </div>
-
-    
-        <mat-form-field class="example-full-width">
-            <mat-label>First name</mat-label>
-            <input matInput  name="name" [(ngModel)]="cliente.name">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <mat-label>Last Name</mat-label>
-            <input matInput  name="lastName" [(ngModel)]="cliente.lastName">
-        </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>First name</mat-label>
+      <input matInput name="name" [(ngModel)]="cliente.name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput name="lastName" [(ngModel)]="cliente.lastName">
+    </mat-form-field>
 
     <mat-form-field class="example-full-width">
       <mat-label>Email</mat-label>
-      <input type="email" matInput  name="email" [(ngModel)]="cliente.email" [errorStateMatcher]="matcher"
+      <input type="email" matInput name="email" [(ngModel)]="cliente.email" [errorStateMatcher]="matcher"
         placeholder="Ex. pat@example.com">
       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
         Please enter a valid email address
@@ -31,7 +24,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Title</mat-label>
-      <input type="email"  name="email" matInput [(ngModel)]="cliente.title" [errorStateMatcher]="matcher"
+      <input type="email" name="email" matInput [(ngModel)]="cliente.title" [errorStateMatcher]="matcher"
         placeholder="Software Enginer">
       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
         Please enter a valid title
@@ -55,7 +48,7 @@
         <td>
           <mat-form-field>
             <mat-label>Position</mat-label>
-            <mat-select matInput  name="position" [(ngModel)]="cliente.position">
+            <mat-select matInput name="position" [(ngModel)]="cliente.position">
               <mat-option value="Junior">Junior</mat-option>
               <mat-option value="Pleno">Pleno</mat-option>
               <mat-option value="Senior">Senior</mat-option>
@@ -65,7 +58,7 @@
         <td>
           <mat-form-field class="example-full-width">
             <mat-label>Choose a date</mat-label>
-            <input matInput  name="dataNasc" [matDatepicker]="picker" [(ngModel)]="cliente.dataNasc">
+            <input matInput name="dataNasc" [matDatepicker]="picker" [(ngModel)]="cliente.dataNasc">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>

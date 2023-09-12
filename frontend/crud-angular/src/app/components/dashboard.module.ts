@@ -24,7 +24,6 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { AboutComponent } from '../components/about/about.component';
 import { ClientsComponent } from '../components/clients/clients.component';
-import { DelClientComponent } from '../components/clients/del-client/del-client.component';
 import { RegClientComponent } from '../components/clients/reg-client/reg-client.component';
 import { UpdClientComponent } from '../components/clients/upd-client/upd-client.component';
 import { ContactComponent } from '../components/contact/contact.component';
@@ -56,7 +55,6 @@ import {MatMenuModule} from '@angular/material/menu';
     RegClientComponent,
     AboutComponent,
     TableComponent,
-    DelClientComponent,
     UpdClientComponent,
     ChartPieComponent,
     DashboardComponent,

@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #DDE6ED;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+mat-card-content{
+  padding: 10px;
+  width: 100%;
+  height: 55px;
+  border-radius: 0 0 7px 7px;
+  background-color: #03C988;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.card p {
+  margin: 0;
+  font-size: 18px;
+  color: #777;
+}
+
+.top-section {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.grid-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bottom-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: black;
+}
+
+.item {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: white;
+}
+.item h1{
+  text-align: center;
+}
+.pie1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+app-chart-pie{
+  margin: 0 auto;
+}
+.example-header-image mat-icon {
+  font-size: 45px;
+  overflow: initial;
+}
+
+.hight-cards {
+  border-radius: 10px;
+}
+
+.hight-cards mat-card-header,
+mat-card-title,
+mat-card-subtitle {
+  background-color: white;
+  color: black;
+}
+
+.hight-cards mat-card-content {
+  padding: 10px;
+}

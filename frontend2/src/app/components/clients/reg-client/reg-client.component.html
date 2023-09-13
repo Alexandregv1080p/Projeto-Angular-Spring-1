@@ -1,0 +1,76 @@
+<h1>Cadastrar clientes</h1>
+<mat-card style="padding: 20px; background-color: #f4f6f7;">
+  <mat-card-content>Cadastrar usuario</mat-card-content>
+  <form class="example-form" [formGroup]="form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Primeiro nome</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Sobrenome</mat-label>
+      <input matInput formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
+        placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Entre com um email válido por favor
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email é <strong>obrigatório</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Título</mat-label>
+      <input type="email" matInput formControlName="title" [errorStateMatcher]="matcher" placeholder="Software Enginer">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid title
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Title <strong>requerido</strong>
+      </mat-error>
+    </mat-form-field>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Status</mat-label>
+            <mat-select matInput formControlName="status">
+              <mat-option value="Ativo">Ativo</mat-option>
+              <mat-option value="Em progresso">Em progresso</mat-option>
+              <mat-option value="Desativo">Desativo</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Posição</mat-label>
+            <mat-select matInput formControlName="position">
+              <mat-option value="Junior">Junior</mat-option>
+              <mat-option value="Pleno">Pleno</mat-option>
+              <mat-option value="Senior">Senior</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dataNasc">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </td>
+    </table>
+    <mat-card-actions>
+      <button mat-raised-button (click)="onSubmit()">Salvar</button>
+      <button mat-raised-button (click)="onCancel()">Cancelar</button>
+    </mat-card-actions>
+  </form>
+
+
+</mat-card>

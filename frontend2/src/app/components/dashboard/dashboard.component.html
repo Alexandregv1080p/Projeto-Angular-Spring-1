@@ -1,0 +1,42 @@
+<mat-toolbar fixedInViewport="true" style="background-color: #2b2d42;">
+    <mat-icon [@rotatedState]="iconState" (click)="toggleIcon()" style="margin-left: 30px;">menu</mat-icon>
+    <span style="margin-left: 20px;">Menu</span>
+    <span class="example-spacer"></span>
+    <div class="perfil">
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon style="margin-left:10px">account_circle</mat-icon >Perfil</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/perfil">Editar perfil</button>
+            <button mat-menu-item routerLink="/login" >Sair</button>
+        </mat-menu>
+    </div>
+    </mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav style="background-color: #8d99ae;" [(opened)]="opened" mode="side" fixedInViewport="true"
+        fixedTopGap="64">
+        <mat-nav-list>
+            <a routerLink="/home" mat-list-item>
+                <mat-icon>assessment</mat-icon>
+                Inicio
+            </a>
+            <a routerLink="/clientes" mat-list-item>
+                <mat-icon>assignment_ind</mat-icon>
+                Clientes
+            </a>
+            <a routerLink="/contact" mat-list-item>
+                <mat-icon>perm_phone_msg</mat-icon>
+                Contato
+            </a>
+            <a routerLink="/about" mat-list-item>
+                <mat-icon>zoom_in</mat-icon>
+                Sobre
+            </a>
+            <a routerLink="/tasks" mat-list-item>
+                <mat-icon>assignment</mat-icon>
+                Tarefas
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

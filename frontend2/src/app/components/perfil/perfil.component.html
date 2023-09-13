@@ -1,0 +1,31 @@
+<div class="card-container">
+    <div class="card-wrapper">
+      <mat-card *ngIf="userProfile" class="card-central" style="margin-top: 20px; padding: 20px; background-color: white;">
+        <h1>Dados do perfil</h1>
+        <form class="example-form">
+          <table class="example-full-width" cellspacing="0" style="background-color: white;">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Primeiro nome</mat-label>
+                  <input type="text" name="name" matInput [(ngModel)]="userProfile.firstname" [disabled]="!isFormEditable" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Ultimo nome</mat-label>
+                    <input type="text" name="lastname" matInput [(ngModel)]="userProfile.lastname" [disabled]="!isFormEditable" >
+                  </mat-form-field>
+              </td>
+            </tr>
+          </table>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput name="email" [(ngModel)]="userProfile.email" [disabled]="!isFormEditable"
+             placeholder="Ex. pat@example.com">
+          </mat-form-field>
+          <button mat-raised-button (click)="toggleEditState()">{{ isFormEditable ? 'Confirmar' : 'Editar' }}</button>
+          <button mat-raised-button (click)="updProfile()">Salvar</button>
+        </form>
+  
+      </mat-card>
+    </div>
+  </div>

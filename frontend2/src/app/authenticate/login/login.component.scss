@@ -1,0 +1,51 @@
+.card-container {
+  background: linear-gradient(to top,#272626 10% , #353131 25%, #5c5959 50%, #9f9191 75%);
+  height: 100vh;
+  background-size: cover;
+  
+}
+.example-form {
+  margin-top: 30px;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.main-card{
+  width: 850px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  border-radius: 30px;
+}
+.btn{
+  width: 100%;
+  background-color: rgb(142, 37, 134);
+  box-shadow: 0px 10px 40px -12px rgb(189, 41, 177);
+}
+p,h1{
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+}
+a{
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+mat-icon{
+  color: white;
+}

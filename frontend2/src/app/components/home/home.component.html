@@ -1,0 +1,83 @@
+<div class="main-content">
+  <header class="header">
+    <h1>Welcome to the Dashboard</h1>
+  </header>
+
+  <section class="cards">
+    <mat-card class="example-card hight-cards">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"><mat-icon>cached</mat-icon></div>
+        <mat-card-title>10</mat-card-title>
+        <mat-card-subtitle>Dowloads</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content style="background-color: orange;" >
+        <p>
+            Estes são dados ficticios
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="example-card hight-cards">
+      <mat-card-header >
+        <div mat-card-avatar class="example-header-image"><mat-icon>account_box</mat-icon></div>
+        <mat-card-title *ngIf="clientService.numberOfIds > 0">{{clientService.numberOfIds }}</mat-card-title>
+        <mat-card-subtitle>Usuarios cadastrados</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Números de usuários cadastrados
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card  class="example-card hight-cards">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"><mat-icon>file_download</mat-icon></div>
+        <mat-card-title>2</mat-card-title>
+        <mat-card-subtitle>Visitas</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content 
+      class="mat-mdc-card-content">
+        <p>
+            Estes são dados ficticios
+        </p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="example-card hight-cards">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"><mat-icon>assignment</mat-icon></div>
+        <mat-card-title *ngIf="taskService.numberOfIds > 0">{{taskService.numberOfIds }}</mat-card-title>
+        <mat-card-subtitle>Tarefas ativas</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content style="background-color: rgb(16, 142, 192);">
+        <p>
+            Número de tarefas ativas
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+
+  <div class="grid-container">        
+    <mat-card><app-charts></app-charts></mat-card>
+    
+    <div class="bottom-section">
+      <div class="item" >
+        <h1>Dados da contabilização total</h1>
+        <div class="pie1">
+          <app-chart-pie class="pie1" [numberOfIds]="clientService.numberOfIds" [numberOfTaskIds]="taskService.numberOfIds"></app-chart-pie>
+        </div>
+        <hr>
+        <p>Dados de contabilização total dos usuarios,tarefas e downloads</p>
+      </div>
+      <div class="item">
+        <h1>Dados coletados baseados nos estados ativos</h1>
+        <div class="pie1">
+          <app-chart-pie2></app-chart-pie2>
+        </div>
+        <hr>
+        <p>Dados de contabilização total dos usuarios,tarefas e downloads</p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+

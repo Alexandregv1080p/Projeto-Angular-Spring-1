@@ -1,0 +1,27 @@
+<div class="card-container">
+  <div class="card-wrapper">
+    <mat-card class="main-card" color="accent">
+      <mat-card-content>
+      <h1>Olá, bem vindo a minha aplicação!</h1>
+      <p>O registro e login são feitos pelo Spring Security</p>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Entre como seu email</mat-label>
+          <input matInput placeholder="pat@example.com" formControlName="email" >
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Digite sua senha</mat-label>
+          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"  [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-button class="btn" type="submit" color="">Login</button>
+        <p>Novo por aqui? Cadastre-se clicando <a routerLink="/register">aqui</a></p>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  </div>
+</div>

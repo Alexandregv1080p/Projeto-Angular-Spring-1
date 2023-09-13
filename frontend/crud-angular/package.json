@@ -24,24 +24,32 @@
     "@canvasjs/charts": "^3.7.13",
     "@fortawesome/fontawesome-free": "^6.0.0",
     "@swimlane/ngx-charts": "^20.4.1",
+    "assert": "^2.1.0",
     "bootstrap": "^5.3.1",
     "chart.js": "^3.9.1",
+    "core-js": "^3.32.2",
+    "crypto": "^1.0.1",
     "crypto-browserify": "^3.12.0",
     "highcharts": "^11.1.0",
     "highcharts-angular": "^3.1.2",
     "http": "^0.0.1-security",
+    "https-browserify": "^1.0.0",
     "mdb-angular-ui-kit": "^5.0.0",
+    "net": "^1.0.2",
     "ng2-charts": "^4.1.1",
+    "os-browserify": "^0.3.0",
     "path": "^0.12.7",
     "querystring": "^0.2.1",
     "rxjs": "~7.8.0",
     "stream": "^0.0.2",
+    "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "tslib": "^2.6.2",
     "zlib": "^1.0.5",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^16.0.1",
     "@angular-devkit/build-angular": "^16.1.4",
     "@angular/cli": "~16.2.1",
     "@angular/compiler-cli": "^16.1.0",
@@ -62,6 +70,7 @@
   "browser": {
     "fs": false,
     "os": false,
-    "path": false
+    "path": false,
+    "zlib": false
   }
 }

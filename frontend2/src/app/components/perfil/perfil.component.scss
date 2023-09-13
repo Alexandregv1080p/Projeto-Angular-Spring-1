@@ -1,0 +1,41 @@
+*{
+    color: black;
+  }
+  .card-central{
+    width: 1050px;
+    height: 650px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+  }
+  .card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+  button{
+    width: 102px;
+    margin: 14px;
+  }
+  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: #aec3d0;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 15px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  ::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: rgb(0 0 0 / 87%);
+  }
+  ::ng-deep .cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel {
+  background-color: #aec3d0;
+  }

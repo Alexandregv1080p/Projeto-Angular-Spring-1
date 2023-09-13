@@ -71,6 +71,8 @@
     "fs": false,
     "os": false,
     "path": false,
-    "zlib": false
+    "zlib": false,
+    "stream":false,
+    "querystring":false
   }
 }

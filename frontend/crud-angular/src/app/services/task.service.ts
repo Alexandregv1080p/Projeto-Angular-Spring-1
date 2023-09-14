@@ -39,4 +39,8 @@ export class TasksService {
         })
       )
     }
+    readById(id: string): Observable<Task> {
+      let url = `${this.API}/${id}`
+      return this.http.get<Task>(url);
+    }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Client } from 'src/app/model/Client';
+import { Task } from 'src/app/model/Task';
 import { ClientServiceService } from 'src/app/services/client-service.service';
 import { TasksService } from 'src/app/services/task.service';
 
@@ -13,6 +14,7 @@ import { TasksService } from 'src/app/services/task.service';
 export class DelTaskComponent implements OnInit {
   form: FormGroup
   clientes!:Client[]
+  task!:Task
 
   constructor(
     private router: Router,

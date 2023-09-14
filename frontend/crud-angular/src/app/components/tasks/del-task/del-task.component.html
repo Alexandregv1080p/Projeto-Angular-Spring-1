@@ -3,12 +3,12 @@
   <mat-card-content>Cadastre a tarefa</mat-card-content>
   <form class="example-form" [formGroup]="form">
     <mat-form-field class="example-full-width">
-        <mat-label>Cliente</mat-label>
-        <mat-select formControlName="clientId">
-            <mat-option *ngFor="let c of clientes" [value]="c.id">
-                {{ c.name }}
-            </mat-option>
-        </mat-select>
+      <mat-label>Cliente</mat-label>
+      <mat-select formControlName="clientId">
+        <mat-option *ngFor="let c of clientes" [value]="c.id" >
+          {{ c.name }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Nome da Tarefa</mat-label>

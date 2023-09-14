@@ -55,5 +55,6 @@ export class RegTaskComponent implements OnInit {
   
   
   onCancel() {
+    this.router.navigate(["tasks"])
   }
 }

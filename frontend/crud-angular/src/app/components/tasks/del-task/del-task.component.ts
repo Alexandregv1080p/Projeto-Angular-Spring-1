@@ -31,17 +31,17 @@ export class DelTaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.clientService.list().subscribe((clientes) => {
-      this.clientes = clientes.filter((c) => c.status === 'Ativo');
+    this.clientService.list().subscribe((cliente) => {
+      this.clientes = cliente.filter((c) => c.status === 'Ativo');
     });
   
     let id = this.route.snapshot.params['id'];
     this.taskService.readById(id).subscribe((task) => {
       this.task = task;
       this.form.patchValue({
-        clientId: this.task.clientId.id, // Certifique-se de que a propriedade do cliente seja a correta
+        clientId: this.task.clientId, // Define o ID do cliente associado à tarefa
         nomeTarefa: this.task.nomeTarefa,
-        status: this.task.status ? "true" : "false", // Certifique-se de que status seja uma string
+        status: this.task.status ? "true" : "false",
       });
     });
   }
@@ -49,11 +49,11 @@ export class DelTaskComponent implements OnInit {
   deleteTask() {
     this.taskService.remove(this.task.id).subscribe(() => {
       this.taskService.showMensage('Tarefa deletada com sucesso!');
-      this.router.navigate(['clientes']);
+      this.router.navigate(['tasks']);
     });
   }
 
   onCancel() {
-    this.router.navigate(['clientes']);
+    this.router.navigate(["tasks"])
   }
 }

@@ -44,8 +44,13 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Task update(Long id, TaskForm task) {
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+    public Task update(Long id, TaskForm form) {
+        Task task = taskRepository.getReferenceById(id);
+        Client client = clientRepository.findById(form.getClientId()).get();
+        task.setCliente(client);
+        task.setNomeTarefa(form.getNomeTarefa());
+        task.setStatus(form.getStatus());
+        return taskRepository.save(task);
     }
 
     @Override

@@ -43,4 +43,8 @@ export class TasksService {
       let url = `${this.API}/${id}`
       return this.http.get<Task>(url);
     }
+    remove(id: string){
+      return this.http.delete<Task>(`${this.API}/${id}`)
+        .pipe(first())
+    }
 }

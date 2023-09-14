@@ -40,8 +40,7 @@ export class TasksService {
       )
     }
     readById(id: string): Observable<Task> {
-      let url = `${this.API}/${id}`
-      return this.http.get<Task>(url);
+      return this.http.get<Task>(`${this.API}/${id}`);
     }
     remove(id: string){
       return this.http.delete<Task>(`${this.API}/${id}`)

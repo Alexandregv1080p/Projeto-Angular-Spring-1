@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alexandre.backend.model.Client;
 import com.alexandre.backend.model.Task;
 import com.alexandre.backend.model.form.TaskForm;
 import com.alexandre.backend.service.impl.TaskServiceImpl;
@@ -34,8 +36,9 @@ public class TaskController {
     public Task updateTask(@PathVariable Long id,@RequestBody TaskForm form){
         return service.update(id,form);
     }
-    @GetMapping("/{id}")
-    public Task get(@RequestParam(value = "id", required = true)Long id){
+    @GetMapping(value = "/{id}")
+    @ResponseBody
+    public Task get(@PathVariable Long id){
         return service.get(id);
-    } 
+    }
 }

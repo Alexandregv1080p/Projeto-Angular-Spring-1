@@ -31,17 +31,17 @@ export class DelTaskComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.route.params.subscribe((params) => {
-      let id = this.route.snapshot.params['id'];
-      this.taskService.readById(id).subscribe((task) => {
-        this.task = task;
-        console.log(task)
-        this.form.patchValue({
-          clientId: this.task.cliente, // Use a propriedade correta aqui
-          nomeTarefa: this.task.nomeTarefa,
-          status: this.task.status,
-        });
+    this.clientService.list().subscribe((clientes) => {
+      this.clientes = clientes.filter((c) => c.status === 'Ativo');
+    });
+  
+    let id = this.route.snapshot.params['id'];
+    this.taskService.readById(id).subscribe((task) => {
+      this.task = task;
+      this.form.patchValue({
+        clientId: this.task.clientId.id, // Certifique-se de que a propriedade do cliente seja a correta
+        nomeTarefa: this.task.nomeTarefa,
+        status: this.task.status ? "true" : "false", // Certifique-se de que status seja uma string
       });
     });
   }

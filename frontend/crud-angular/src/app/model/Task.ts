@@ -1,6 +1,6 @@
 export interface Task{
     id:string
-    cliente:{}
+    clientId:string
     nomeTarefa: string
     status: boolean
 }

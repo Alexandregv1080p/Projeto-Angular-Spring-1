@@ -1,1 +1,31 @@
-<p>del-task works!</p>
+<h1>Cadastrar Tarefa</h1>
+<mat-card style="padding: 20px; background-color: #f4f6f7;">
+  <mat-card-content>Cadastre a tarefa</mat-card-content>
+  <form class="example-form" [formGroup]="form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Cliente</mat-label>
+        <mat-select formControlName="clientId">
+            <mat-option *ngFor="let c of clientes" [value]="c.id">
+                {{ c.name }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Nome da Tarefa</mat-label>
+      <input matInput formControlName="nomeTarefa">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Status</mat-label>
+      <mat-select matInput formControlName="status">
+        <mat-option value="true">Ativo</mat-option>
+        <mat-option value="false">Inativo</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button mat-raised-button (click)="onSubmit()">Salvar</button>
+      <button mat-raised-button (click)="onCancel()">Cancelar</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

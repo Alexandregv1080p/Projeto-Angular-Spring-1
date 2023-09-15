@@ -12,8 +12,7 @@ import { TasksService } from 'src/app/services/task.service';
   styleUrls: ['./del-task.component.scss'],
 })
 export class DelTaskComponent implements OnInit {
-  form: FormGroup;
-  clientes!: Client[];
+  cliente!: Client[];
   task!: Task;
 
   constructor(
@@ -23,22 +22,14 @@ export class DelTaskComponent implements OnInit {
     private formBuilder: FormBuilder,
     private clientService: ClientServiceService
   ) {
-    this.form = this.formBuilder.group({
-      clientId: [null, [Validators.required]],
-      nomeTarefa: ['', Validators.required],
-      status: [null, Validators.required],
-    });
+    
   }
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
     this.taskService.readById(id).subscribe((task) => {
+      task.status === true ? "true" : "false"
       this.task = task;
-      console.log(task)
-      this.form.patchValue({
-        clientId: this.task.clientId, 
-        nomeTarefa: this.task.nomeTarefa,
-        status: this.task.status ? "true" : "false",
-      });
+      console.log(task.cliente)
     });
   }
 

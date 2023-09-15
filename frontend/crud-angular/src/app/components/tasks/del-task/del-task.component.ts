@@ -29,17 +29,13 @@ export class DelTaskComponent implements OnInit {
       status: [null, Validators.required],
     });
   }
-
   ngOnInit(): void {
-    this.clientService.list().subscribe((cliente) => {
-      this.clientes = cliente.filter((c) => c.status === 'Ativo');
-    });
-  
     let id = this.route.snapshot.params['id'];
     this.taskService.readById(id).subscribe((task) => {
       this.task = task;
+      console.log(task)
       this.form.patchValue({
-        clientId: this.task.clientId, // Define o ID do cliente associado à tarefa
+        clientId: this.task.clientId, 
         nomeTarefa: this.task.nomeTarefa,
         status: this.task.status ? "true" : "false",
       });

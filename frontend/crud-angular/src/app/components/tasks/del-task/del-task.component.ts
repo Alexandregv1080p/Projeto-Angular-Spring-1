@@ -34,6 +34,7 @@ export class DelTaskComponent implements OnInit {
         this.task.cliente = task.cliente;  // Assign the client details to task if available
         console.log(task.cliente)
       }
+      this.task.id = id;
       this.task.nomeTarefa = task.nomeTarefa;
       this.task.status = task.status;
     });

@@ -1,26 +1,52 @@
 *{
-    color: black;
-  }
-  button{
-    width: 102px;
-    margin: 14px;
-  }
-  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-    background-color: #aec3d0;
+  color: black;
+}
+button{
+  width: 102px;
+  margin: 14px;
+}
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #aec3d0;
 }
 .example-form {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    margin: 15px;
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  ::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
-    color: rgb(0 0 0 / 87%);
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 15px;
 }
-  ::ng-deep .cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel {
-  background-color: #aec3d0;
+
+.example-full-width {
+  width: 100%;
+}
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: rgb(0 0 0 / 87%);
+}
+::ng-deep .cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel {
+background-color: #aec3d0;
+}
+
+::ng-deep .mat-mdc-select-value {
+width: 100%;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+color: black;
+}
+::ng-deep .mdc-text-field--filled.mdc-text-field--disabled {
+color: white;
+background-color: #aec3d0;
+}
+::ng-deep input.mdc-text-field--filled:disabled {
+color: white;
+background-color: #aec3d0;
+}
+mat-select[disabled], input[disabled] {
+color: #ffffff; 
+cursor: not-allowed;
+}
+.deletar {
+transition: background-color 1s; 
+}
+.deletar:hover{
+background-color: red;
 }

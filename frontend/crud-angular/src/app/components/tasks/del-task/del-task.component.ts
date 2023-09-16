@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Client } from 'src/app/model/Client';
 import { Task } from 'src/app/model/Task';
 import { ClientServiceService } from 'src/app/services/client-service.service';
@@ -12,9 +13,8 @@ import { TasksService } from 'src/app/services/task.service';
   styleUrls: ['./del-task.component.scss'],
 })
 export class DelTaskComponent implements OnInit {
-  cliente!: Client[];
+  clientes!: Client[];
   task!: Task;
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -27,9 +27,8 @@ export class DelTaskComponent implements OnInit {
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
     this.taskService.readById(id).subscribe((task) => {
-      task.status === true ? "true" : "false"
+      console.log(task.cliente.name)
       this.task = task;
-      console.log(task.cliente)
     });
   }
 

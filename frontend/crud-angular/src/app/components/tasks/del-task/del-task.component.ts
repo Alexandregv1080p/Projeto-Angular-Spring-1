@@ -14,7 +14,10 @@ import { TasksService } from 'src/app/services/task.service';
 })
 export class DelTaskComponent implements OnInit {
   clientes!: Client[];
-  task!: Task;
+  task: Task = {
+    cliente: { name: '' }, nomeTarefa: '', status: false,
+    id: ''
+  };
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -27,8 +30,12 @@ export class DelTaskComponent implements OnInit {
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
     this.taskService.readById(id).subscribe((task) => {
-      console.log(task.cliente.name)
-      this.task = task;
+      if (task.cliente) {
+        this.task.cliente = task.cliente;  // Assign the client details to task if available
+        console.log(task.cliente)
+      }
+      this.task.nomeTarefa = task.nomeTarefa;
+      this.task.status = task.status;
     });
   }
 

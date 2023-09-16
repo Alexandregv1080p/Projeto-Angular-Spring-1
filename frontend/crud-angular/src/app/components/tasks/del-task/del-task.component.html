@@ -3,26 +3,26 @@
   <mat-card-content>Cadastre a tarefa</mat-card-content>
   <form class="example-form" >
     <mat-form-field class="example-full-width">
-      <mat-select name="name" [(ngModel)]="task.cliente.name">
-        <mat-option *ngFor="let c of clientes" [value]="c.name">
-          {{ c.name }}
+      <mat-select name="name" [(ngModel)]="task.cliente.name" disabled>
+        <mat-option [value]="task.cliente.name">
+          {{ task.cliente.name }}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Nome da Tarefa</mat-label>
-      <input matInput name="nomeTarefa" [(ngModel)]="this.task.nomeTarefa">
+      <input matInput name="nomeTarefa" [(ngModel)]="this.task.nomeTarefa" disabled>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <mat-select matInput name="status" [(ngModel)]="this.task.status">
+      <mat-select matInput name="status" [(ngModel)]="this.task.status" disabled>
         <mat-option [value]="true">Ativo</mat-option>
         <mat-option [value]="false">Inativo</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-card-actions>
-      <button mat-raised-button (click)="deleteTask()">Deletar</button>
+      <button mat-raised-button class="deletar" (click)="deleteTask()">Deletar</button>
       <button mat-raised-button (click)="onCancel()">Cancelar</button>
     </mat-card-actions>
   </form>

@@ -24,3 +24,29 @@
   ::ng-deep .cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel {
   background-color: #aec3d0;
 }
+
+::ng-deep .mat-mdc-select-value {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: black;
+}
+::ng-deep .mdc-text-field--filled.mdc-text-field--disabled {
+  color: white;
+  background-color: #aec3d0;
+}
+::ng-deep input.mdc-text-field--filled:disabled {
+  color: white;
+  background-color: #aec3d0;
+}
+mat-select[disabled], input[disabled] {
+  color: #ffffff; 
+  cursor: not-allowed;
+}
+.deletar {
+  transition: background-color 1s; 
+}
+.deletar:hover{
+  background-color: red;
+}

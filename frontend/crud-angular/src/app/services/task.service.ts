@@ -39,4 +39,14 @@ export class TasksService {
         })
       )
     }
+    readById(id: string): Observable<Task> {
+      return this.http.get<Task>(`${this.API}/${id}`);
+    }
+    update(id: string, taskData: any): Observable<Task> {
+      return this.http.put<Task>(`${this.API}/${id}`, taskData);
+    }
+    remove(id: string){
+      return this.http.delete<Task>(`${this.API}/${id}`)
+        .pipe(first())
+    }
 }

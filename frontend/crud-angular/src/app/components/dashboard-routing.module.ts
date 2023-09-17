@@ -14,6 +14,7 @@ import { AuthenticationGuard } from '../authentication.guard';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RegTaskComponent } from './tasks/reg-task/reg-task.component';
 import { DelTaskComponent } from './tasks/del-task/del-task.component';
+import { ChangePasswordComponent } from './perfil/change-password/change-password.component';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
       { path:'tasks', component: TasksComponent},
       { path:'tasks/register', component:RegTaskComponent},
       { path:'tasks/update-task/:id', component:UpdTaskComponent},
-      { path:'tasks/delete-task/:id', component:DelTaskComponent}
+      { path:'tasks/delete-task/:id', component:DelTaskComponent},
+      { path: 'perfil/change-password', component:ChangePasswordComponent}
     ]
   }
 ];

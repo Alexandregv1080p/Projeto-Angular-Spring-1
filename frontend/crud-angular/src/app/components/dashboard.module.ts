@@ -42,6 +42,7 @@ import { DelTaskComponent } from './tasks/del-task/del-task.component';
 import { UpdTaskComponent } from './tasks/upd-task/upd-task.component';
 import { ChartPie2Component } from '../widgets/chart-pie2/chart-pie2.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { ChangePasswordComponent } from './perfil/change-password/change-password.component';
 
 
 
@@ -66,7 +67,8 @@ import {MatMenuModule} from '@angular/material/menu';
     RegTaskComponent,
     DelTaskComponent,
     UpdTaskComponent,
-    ChartPie2Component
+    ChartPie2Component,
+    ChangePasswordComponent
   ],
   imports: [
     

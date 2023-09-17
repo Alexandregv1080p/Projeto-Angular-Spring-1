@@ -22,6 +22,7 @@
             <input type="email" matInput name="email" [(ngModel)]="userProfile.email" [disabled]="!isFormEditable"
              placeholder="Ex. pat@example.com">
           </mat-form-field>
+          <h3>Deseja mudar de senha? <a routerLink="/perfil/change-password">Clique aqui</a></h3>
           <button mat-raised-button (click)="toggleEditState()">{{ isFormEditable ? 'Confirmar' : 'Editar' }}</button>
           <button mat-raised-button (click)="updProfile()">Salvar</button>
         </form>

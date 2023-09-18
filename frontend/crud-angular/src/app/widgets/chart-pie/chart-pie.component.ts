@@ -54,7 +54,11 @@ export class ChartPieComponent implements OnInit {
       },
       {
         "name":"Total de Downloads",
-        "value":10
+        "value":3
+      },
+      {
+        "name":"Total de Visitas",
+        "value":2
       }
     ];
   }

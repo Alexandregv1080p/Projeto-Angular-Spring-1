@@ -78,6 +78,16 @@ public class AuthenticateService {
             e.printStackTrace();
         }
     }
+    public User findUserByEmail(String email) {
+        return repository.findUserByEmail(email);
+    }
+    public boolean checkIfValidOldPassword(User user, String oldPassword) {
+        return passwordEncoder.matches(oldPassword, user.getPassword());
+    }
+    public void changeUserPassword(User user, String newPassword) {
+        user.setPassword(newPassword);
+        repository.save(user);
+    }
     
     
     

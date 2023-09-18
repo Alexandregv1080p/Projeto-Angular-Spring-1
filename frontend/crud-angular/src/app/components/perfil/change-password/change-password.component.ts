@@ -13,7 +13,9 @@ export class ChangePasswordComponent implements OnInit {
   userProfile: UserDetails | any;
   hide = true;
   passwordForm: FormGroup;
-  profilePass!: string;
+  oldPassword: string = ''; 
+  newPassword: string = '';  
+  confirmPassword: string = '';  
 
   constructor(
     private perfilService: PerfilService,
@@ -23,10 +25,8 @@ export class ChangePasswordComponent implements OnInit {
     this.passwordForm = this.fb.group({
       currentPassword: ['', [Validators.required]],
       newPassword: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]]
     });
   }
-
   ngOnInit(): void {
     this.loadUserProfile();
   }
@@ -35,8 +35,6 @@ export class ChangePasswordComponent implements OnInit {
     this.perfilService.getUserProfile().subscribe(
       (userProfile) => {
         this.userProfile = userProfile;
-        console.log(userProfile.password)
-        this.profilePass = this.userProfile.password
       },
       (error) => {
         console.error('Error loading user profile:', error);
@@ -48,26 +46,17 @@ export class ChangePasswordComponent implements OnInit {
     this.router.navigate(["perfil"])
   }
 
-  updPassword() {
-    const currentPassword = this.passwordForm.get('currentPassword')?.value;
-    const newPassword = this.passwordForm.get('newPassword')?.value;
-    const confirmPassword = this.passwordForm.get('confirmPassword')?.value;
-
-    console.log(this.profilePass)
-    if (currentPassword === this.profilePass) {
-      console.log('Senha atual está correta');
-      console.log('Nova Senha:', newPassword);
-      console.log('Confirmar Nova Senha:', confirmPassword);
-      
-      // Verifique se a nova senha e a confirmação coincidem
-      if (newPassword === confirmPassword) {
-        console.log('Senhas coincidem. Atualizando senha...');
-      } else {
-        console.log('As senhas não coincidem. Por favor, verifique.');
+  changePassword() {
+    const newPassword =  this.newPassword; 
+    const oldPassword = this.oldPassword;
+    this.perfilService.changePassword(newPassword, oldPassword).subscribe(
+      () => {
+        this.perfilService.showMensage("Senha alterada com sucesso!")
+        this.router.navigate(["perfil"])
+      },
+      error => {
+        this.perfilService.showMensage("Erro ao alterar senhar, senha atual não bate")
       }
-    } else {
-      console.log('Senha atual incorreta. Por favor, verifique.');
-    }
+    );
   }
-  
 }

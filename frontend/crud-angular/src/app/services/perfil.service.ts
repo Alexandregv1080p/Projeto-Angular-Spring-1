@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserDetails } from '../model/UserDetails';
@@ -26,4 +26,12 @@ export class PerfilService {
   updateProfile(request: UserDetails): Observable<void> {
     return this.http.put<void>(`${this.API}/update-profile`, request);
   }
+  changePassword(newPassword: string, oldPassword: string): Observable<void> {
+    const body = {
+      newPassword,
+      oldPassword
+    };
+    return this.http.put<void>(`${this.API}/change-password?newPassword=${newPassword}&oldPassword=${oldPassword}`, body,)
+  }
+
 }

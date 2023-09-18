@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Task } from '../model/Task';
-import { Observable, first, tap } from 'rxjs';
+import { Observable, first, map, tap } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -12,6 +12,7 @@ export class TasksService {
   private readonly API = 'http://localhost:8080/api/tasks'
   task: Task[] = []
   numberOfIds: number = 0;
+  numberOfIdsActive: number = 0;
   constructor(private http: HttpClient,
     private router:Router,
     private snackBar:MatSnackBar) { }
@@ -38,6 +39,16 @@ export class TasksService {
           this.numberOfIds = task.length
         })
       )
+    }
+    listTaskAtivas(): Observable<Task[]> {
+      return this.http.get<Task[]>(this.API)
+        .pipe(
+          map(tasks => tasks.filter(task => task.status === true)),
+          tap(activeTasks => {
+            this.task = activeTasks;
+            this.numberOfIdsActive = activeTasks.length;
+          })
+        );
     }
     readById(id: string): Observable<Task> {
       return this.http.get<Task>(`${this.API}/${id}`);

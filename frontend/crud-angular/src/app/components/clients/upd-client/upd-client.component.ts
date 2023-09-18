@@ -44,6 +44,7 @@ export class UpdClientComponent implements OnInit {
   updateClient(){
     this.clienteService.update(this.cliente).subscribe(()=>{
       this.clienteService.showMensage("Cliente atualizado com sucesso!")
+      this.router.navigate(["clientes"])
     })
   }
   cancel():void{

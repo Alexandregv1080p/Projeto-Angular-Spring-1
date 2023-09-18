@@ -22,6 +22,9 @@ export class HomeComponent implements OnInit {
     this.clientService.list().subscribe(clients => {
       this.clientService.numberOfIds = clients.length;
     });
+    this.taskService.listTaskAtivas().subscribe(clients => {
+      this.taskService.numberOfIdsActive = clients.length;
+    });
     this.taskService.list().subscribe(clients => {
       this.taskService.numberOfIds = clients.length;
     });

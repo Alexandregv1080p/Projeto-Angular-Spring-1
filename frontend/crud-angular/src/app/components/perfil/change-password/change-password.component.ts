@@ -49,17 +49,25 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   updPassword() {
-    // Implement password update logic
     const currentPassword = this.passwordForm.get('currentPassword')?.value;
     const newPassword = this.passwordForm.get('newPassword')?.value;
     const confirmPassword = this.passwordForm.get('confirmPassword')?.value;
 
-    // Implement your password update logic here
-    console.log('Current Password:', currentPassword);
-    if(currentPassword === this.profilePass){
-      console.log(true)
+    console.log(this.profilePass)
+    if (currentPassword === this.profilePass) {
+      console.log('Senha atual está correta');
+      console.log('Nova Senha:', newPassword);
+      console.log('Confirmar Nova Senha:', confirmPassword);
+      
+      // Verifique se a nova senha e a confirmação coincidem
+      if (newPassword === confirmPassword) {
+        console.log('Senhas coincidem. Atualizando senha...');
+      } else {
+        console.log('As senhas não coincidem. Por favor, verifique.');
+      }
+    } else {
+      console.log('Senha atual incorreta. Por favor, verifique.');
     }
-    console.log('New Password:', newPassword);
-    console.log('Confirm Password:', confirmPassword);
   }
+  
 }

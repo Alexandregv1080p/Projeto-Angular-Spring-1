@@ -58,19 +58,27 @@ public class AuthenticateService {
     
     public void updateProfile(UpdateProfileRequest request, String userEmail) {
         Optional<User> optionalUser = repository.findByEmail(userEmail);
-
+    
         try {
             if (optionalUser.isPresent()) {
                 User user = optionalUser.get();
                 user.setFirstname(request.getFirstname());
                 user.setLastname(request.getLastname());
                 user.setEmail(request.getEmail());
+    
+                String newPassword = request.getPassword();
+    
+                String hashedPassword = passwordEncoder.encode(newPassword);
+    
+                user.setPassword(hashedPassword);
+    
                 repository.save(user);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+    
     
     
 }

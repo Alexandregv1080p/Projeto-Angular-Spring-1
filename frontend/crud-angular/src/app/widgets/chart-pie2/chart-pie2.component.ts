@@ -10,12 +10,24 @@ import { single } from './single';
 export class ChartPie2Component implements OnInit{
   @Input() numberOfIds: number = 0;
   @Input() numberOfTaskIds: number = 0;
-  
+  @Input() numberOfIdsActive: number = 0;
+  @Input() numberOfActiveIds: number = 0;
+  @Input() numberOfInactiveActiveIds: number = 0;
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes['numberOfIds'] && !changes['numberOfIds'].firstChange) {
       this.updateSingleArray();
     }
     if (changes['numberOfTaskIds'] && !changes['numberOfTaskIds'].firstChange) {
+      this.updateSingleArray();
+    }
+    if (changes['numberOfIdsActive'] && !changes['numberOfIdsActive'].firstChange) {
+      this.updateSingleArray();
+    }
+    if (changes['numberOfActiveIds'] && !changes['numberOfActiveIds'].firstChange) {
+      this.updateSingleArray();
+    }
+    if (changes['numberOfInactiveActiveIds'] && !changes['numberOfInactiveActiveIds'].firstChange) {
       this.updateSingleArray();
     }
   }
@@ -44,16 +56,16 @@ export class ChartPie2Component implements OnInit{
   private updateSingleArray(): void {
     this.single = [
       {
-        "name": "Total de Clientes",
-        "value": this.numberOfIds
+        "name": "Total de Clientes Ativos",
+        "value": this.numberOfActiveIds
       },
       {
-        "name":"Total de Tarefas",
-        "value":this.numberOfTaskIds
+        "name":"Total de Tarefas Ativas",
+        "value":this.numberOfIdsActive
       },
       {
-        "name":"Total de Downloads",
-        "value":3
+        "name":"Total de Clientes Inativos",
+        "value":this.numberOfInactiveActiveIds
       },
       {
         "name":"Total de Visitas",

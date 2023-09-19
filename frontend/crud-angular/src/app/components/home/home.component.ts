@@ -10,7 +10,7 @@ import { TasksService } from 'src/app/services/task.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  
+  chartData: number[] = [1, 2, 3];
   
   
 	constructor(
@@ -28,6 +28,16 @@ export class HomeComponent implements OnInit {
     this.taskService.list().subscribe(clients => {
       this.taskService.numberOfIds = clients.length;
     });
+    this.clientService.listClientesAtivos().subscribe(clients => {
+      this.clientService.numberOfActiveIds = clients.length;
+    });
+    this.clientService.listClientesInativos().subscribe(clients => {
+      this.clientService.numberOfInactiveActiveIds = clients.length;
+    });
+    this.updateChartData();
+  }
+  updateChartData() {
+    this.chartData = [this.clientService.numberOfIds, this.taskService.numberOfIdsActive];
   }
   
 }

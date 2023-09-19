@@ -41,10 +41,10 @@ export class ContactComponent {
       ...this.emailData,
       from: remetenteEmail
     };
-    this.emailService.sendEmail(emailData)
-    this.emailService.showMensage("Email enviado com sucesso!")
-    this.clearForm();
-
+    this.emailService.sendEmail(emailData).subscribe(()=>{
+      this.emailService.showMensage("Email enviado com sucesso!")
+      this.clearForm();
+    })
   }
 
   clearForm() {

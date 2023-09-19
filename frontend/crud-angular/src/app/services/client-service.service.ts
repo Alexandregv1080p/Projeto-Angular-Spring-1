@@ -1,7 +1,7 @@
 import { Client } from 'src/app/model/Client';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, first, tap } from 'rxjs';
+import { Observable, first, map, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -13,6 +13,9 @@ export class ClientServiceService {
   private readonly API = 'http://localhost:8080/api/clients'
   clients: Client[] = [];
   numberOfIds: number = 0;
+  numberOfActiveIds: number = 0
+  numberOfInactiveActiveIds: number = 0
+
   constructor(
     private httpClient: HttpClient,
     private router:Router,
@@ -34,6 +37,26 @@ export class ClientServiceService {
         this.numberOfIds = clients.length
       })
     )
+  }
+  listClientesAtivos(): Observable<Client[]> {
+    return this.httpClient.get<Client[]>(this.API)
+      .pipe(
+        map(clients => clients.filter(clients => clients.status === "Ativo")),
+        tap(activeClients => {
+          this.clients = activeClients;
+          this.numberOfActiveIds = activeClients.length;
+        })
+      );
+  }
+  listClientesInativos(): Observable<Client[]> {
+    return this.httpClient.get<Client[]>(this.API)
+      .pipe(
+        map(clients => clients.filter(clients => clients.status === "Desativo")),
+        tap(activeClients => {
+          this.clients = activeClients;
+          this.numberOfInactiveActiveIds = activeClients.length;
+        })
+      );
   }
   read(): Observable<Client[]> {
     return this.httpClient.get<Client[]>(this.API)

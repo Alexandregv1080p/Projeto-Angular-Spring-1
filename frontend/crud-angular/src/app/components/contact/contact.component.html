@@ -23,7 +23,6 @@
           <mat-label>Email de contato</mat-label>
           <input type="email" matInput name="email" [(ngModel)]="emailData.email" [formControl]="emailFormControl"
             [errorStateMatcher]="matcher" placeholder="Ex. pat@example.com">
-          <mat-hint>Errors appear instantly!</mat-hint>
           <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
             Please enter a valid email address
           </mat-error>

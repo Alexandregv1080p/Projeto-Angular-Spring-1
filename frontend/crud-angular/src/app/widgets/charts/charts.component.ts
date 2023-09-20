@@ -11,7 +11,20 @@ export class ChartsComponent implements OnChanges {
   @Input() numberOfTaskIds: number = 0;
 
   Highcharts: typeof Highcharts = Highcharts;
-  chartOptions: Highcharts.Options = {};
+  chartOptions: Highcharts.Options = {
+    series: [
+      {
+        name: 'Number of TaskIds',
+        data: [0,this.numberOfTaskIds],  // Dados para a primeira linha
+        type: 'line'
+      },
+      {
+        name: 'Number of IDs',
+        data: [0,this.numberOfIds],  // Dados para a primeira linha
+        type: 'line'
+      }
+    ]
+  };
 
   ngOnChanges(changes: SimpleChanges) {
     if ((changes['numberOfIds'] && !changes['numberOfIds'].firstChange) ||
@@ -19,18 +32,19 @@ export class ChartsComponent implements OnChanges {
       this.updateChartOptions();
     }
   }
+  constructor(private dataService: Data) {}
 
   private updateChartOptions(): void {
     this.chartOptions = {
       series: [
         {
           name: 'Number of IDs',
-          data: [this.numberOfIds],  // Dados para a primeira linha
+          data: [0,this.numberOfTaskIds],  // Dados para a primeira linha
           type: 'line'
         },
         {
-          name: 'Number of Task IDs',
-          data: [this.numberOfTaskIds],  // Dados para a segunda linha
+          name: 'Number of IDs',
+          data: [0,this.numberOfIds],  // Dados para a primeira linha
           type: 'line'
         }
       ]

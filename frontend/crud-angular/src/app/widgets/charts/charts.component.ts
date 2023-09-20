@@ -25,25 +25,27 @@ export class ChartsComponent implements OnChanges {
       }
     ]
   };
-
+  ngOnInit(): void {
+    this.updateChartOptions();
+  }
   ngOnChanges(changes: SimpleChanges) {
     if ((changes['numberOfIds'] && !changes['numberOfIds'].firstChange) ||
         (changes['numberOfTaskIds'] && !changes['numberOfTaskIds'].firstChange)) {
       this.updateChartOptions();
     }
   }
-  constructor(private dataService: Data) {}
+  constructor() {}
 
   private updateChartOptions(): void {
     this.chartOptions = {
       series: [
         {
-          name: 'Number of IDs',
+          name: 'Number of Tasks IDs',
           data: [0,this.numberOfTaskIds],  // Dados para a primeira linha
           type: 'line'
         },
         {
-          name: 'Number of IDs',
+          name: 'Number of Clients IDs',
           data: [0,this.numberOfIds],  // Dados para a primeira linha
           type: 'line'
         }
